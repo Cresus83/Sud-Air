@@ -1,0 +1,247 @@
+/*###### IMPORTS ###### */
+@import "ressources/_navbar.css";
+@import "ressources/_footer.css";
+/*----------------------*/
+@import "ressources/main.css";
+@import "ressources/template.css";
+
+
+/*############################ */
+/*###### STRUCTURE SITE ###### */
+/*############################ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica", sans-serif;
+    background-color: var(--background-color-body);
+}
+
+p, a {
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.unselectable {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+
+/*####################################### */
+/*###### FLECHE INFERIEURES BLEUES ###### */
+/*####################################### */
+.arrow {
+    position: absolute;
+    top: 600px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.arrow span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid #2ce9ff;
+    border-right: 5px solid #2ce9ff;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+@media only screen and (max-width: 1400px) {
+    .arrow {
+        top: 625px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .arrow {
+        display: none;
+    }
+    .arrow span {
+        display: none;
+    }
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+        transition-delay: 0s !important;
+    }
+}
+/*########################## */
+/*###### SECTION HERO ###### */
+/*########################## */
+#hero {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/webp/hero-bg.webp") top center;
+    background-size: cover;
+    position: relative;
+}
+
+#hero:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#hero .container {
+    position: relative;
+    padding-top: 74px;
+    text-align: center;
+}
+
+#hero h1 {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 1000;
+    line-height: 64px;
+    color: #fff;
+    font-family: Poppins, sans-serif;
+}
+
+#hero h1 span {
+    color: var(--element-color);
+}
+
+#hero h2 {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 10px 0 0 0;
+    font-size: 24px;
+}
+
+#hero .icon-box {
+    padding: 30px 20px;
+    transition: ease-in-out 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 100%;
+    text-align: center;
+    border-radius: 4px;
+}
+
+#hero .icon-box i {
+    font-size: 32px;
+    line-height: 1;
+    color: var(--element-color);
+}
+
+#hero .icon-box h3 {
+    font-weight: 700;
+    margin: 10px 0 0 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+#hero .icon-box h3 a {
+    color: #fff;
+    transition: ease-in-out 0.3s;
+    text-decoration: none;
+    letter-spacing: 0;
+}
+
+#hero .icon-box h3 a:hover {
+    color: var(--text-color-special);
+}
+
+#hero .icon-box:hover {
+    border-color: var(--element-color);
+}
+
+@media (min-width: 1024px) {
+    #hero {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        height: auto;
+    }
+
+    #hero h2 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #hero {
+        height: auto;
+    }
+    #hero h1 {
+        font-size: 40px;
+        line-height:48px;
+    }
+
+    #hero h2 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+@media (max-width: 425px) {
+    #hero {
+        height: auto;
+    }
+    #hero h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    #hero h2 {
+        font-size: 22px;
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 320px) {
+    #hero {
+        height: auto;
+    }
+    #hero h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    #hero h2 {
+        font-size: 17px;
+        line-height: 24px;
+    }
+}
