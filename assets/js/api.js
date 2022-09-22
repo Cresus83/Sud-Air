@@ -6,7 +6,7 @@ async function getVilles() {
   return data;
 }
 
-//* Une fois la connexion réussie, affiche dans la balise portant l'ID "test" la donnée récoltée sous forme d'option pour la liste déroulante.
+//* Une fois la connexion réussie, affiche dans la balise portant l'ID "test" la donnée récoltée sous forme de liste.
 
 getVilles().then(
   (villes) => {
@@ -31,13 +31,22 @@ getVilles().then(
 
 //* Liste les datas de l'API ATMOSUD pour la barre de recherche
 function listData(data) {
+  const listsearchbar = document.getElementById("listsearch");
   clearData();
   if (data.length > 6) {
     for (let i = 0; i < 6; i++) {
+      listsearchbar.innerHTML =
+        "<li class='liststyle ' > <i class='fa-solid fa-location-dot icons'></i>" +
+        data[i].commune +
+        "</li>";
       console.log(data[i].commune);
     }
   } else {
     for (let i = 0; i < data.length; i++) {
+      listsearchbar.innerHTML =
+        "<li class='liststyle' ><i class='fa-solid fa-location-dot icons'></i>" +
+        data[i].commune +
+        "</li>";
       console.log(data[i].commune);
     }
   }
@@ -47,6 +56,15 @@ function listData(data) {
 function clearData() {
   console.clear();
 }
+
+function slide() {
+  window.scrollTo(0, 1080);
+}
+//* Slide vers le bas lorsque l'user clique sur sa ville
+
+const communeselect = document.getElementById("selected");
+
+communeselect.addEventListener("click", slide);
 
 $(document).ready(function () {
   //* Lorsque la liste déroulante subit un changement d'état le script suivant démarre.
