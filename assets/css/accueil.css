@@ -27,21 +27,16 @@ section {
 }
 
 .unselectable {
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
-    user-select: none;          /* Likely future */
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
 }
 
 
-
-
-
-
-
-/*########################## */
-/*###### SECTION HERO ###### */
-/*########################## */
+/*####################################### */
+/*###### SECTION HERO & SEARCH BAR ###### */
+/*####################################### */
 #hero {
     position: relative;
     height: 100vh;
@@ -62,7 +57,7 @@ section {
 
 #hero:before {
     content: "";
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.4);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -76,13 +71,17 @@ section {
     text-align: center;
 }
 
+#hero h1 {
+    font-size: 40px;
+    color: #fff;
+}
 
-
-
-
-
-
-
+.wrapper p {
+    display: flex;
+    justify-content: right;
+    color: #fff;
+    margin-top: 10px;
+}
 
 
 ::selection {
@@ -144,6 +143,7 @@ section {
 .search-input.active .autocom-box li {
     display: block;
 }
+
 .autocom-box li:hover {
     background: #efefef;
 }
