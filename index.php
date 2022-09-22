@@ -43,9 +43,9 @@ ini_set('display_errors', 'on');
 
                     </div>
                     <div class="icon"><i class="fas fa-search"></i></div>
-                    <div class="">
+                    <div class="" id="selected">
                         <ul>
-                            <li class="liststyle"><i class="fa-solid fa-location-dot icons"></i>Test</li>
+                            
                         </ul>
                     </div>
                 </div>
