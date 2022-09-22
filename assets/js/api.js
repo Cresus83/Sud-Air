@@ -1,7 +1,7 @@
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
 async function getVilles() {
-  const response = await fetch("datas/villes.json");
+  const response = await fetch("assets/js/villes.json");
   let data = await response.json();
   return data;
 }
