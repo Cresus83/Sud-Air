@@ -1,10 +1,89 @@
+/*###### IMPORTS ###### */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/*----------------------*/
+
+/*############################ */
+/*###### STRUCTURE SITE ###### */
+/*############################ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
 }
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background-color-body);
+}
+
+p, a {
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.unselectable {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+
+
+
+
+
+
+
+/*########################## */
+/*###### SECTION HERO ###### */
+/*########################## */
+#hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#hero video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+}
+
+
+#hero:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#hero .container {
+    position: relative;
+    padding-top: 74px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
 
 ::selection {
     color: #fff;

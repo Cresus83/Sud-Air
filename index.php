@@ -8,7 +8,8 @@ ini_set('display_errors', 'on');
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Sud'Air, première agence locale dédiée à l'évaluation de la qualité de l'air de la région Provence-Alpes-Côte-d'Azur"/>
+    <meta name="description"
+          content="Sud'Air, première agence locale dédiée à l'évaluation de la qualité de l'air de la région Provence-Alpes-Côte-d'Azur"/>
     <meta name="robots" content="index, follow"/>
     <meta property="og:title" content="Sud'Air | Accueil"/>
     <meta property="og:type" content="website"/>
@@ -30,6 +31,8 @@ ini_set('display_errors', 'on');
 
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center justify-content-center">
+    <video src="assets/img/video.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
+
     <div class="container">
 
 
@@ -82,32 +85,33 @@ ini_set('display_errors', 'on');
         </div>
     </section>--><!-- End Services Section -->
 
-</main><!-- End #main -->
+    <div class="wrapper">
+        <div class="search-input">
+            <a href="" target="_blank" hidden></a>
+            <input id="search" class="input" type="text" placeholder="Recherchez votre ville...">
+            <div class="autocom-box">
 
-<div class="wrapper">
-    <div class="search-input">
-        <a href="" target="_blank" hidden></a>
-        <input id="search" class="input" type="text" placeholder="Recherchez votre ville...">
-        <div class="autocom-box">
-
-        </div>
-        <div class="icon"><i class="fas fa-search"></i></div>
-        <div class="">
-            <ul>
-                <li class="liststyle"><i class="fa-solid fa-location-dot icons"></i>Test</li>
-            </ul>
+            </div>
+            <div class="icon"><i class="fas fa-search"></i></div>
+            <div class="">
+                <ul>
+                    <li class="liststyle"><i class="fa-solid fa-location-dot icons"></i>Test</li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 
-<div id="difuser"></div>
+    <div id="difuser"></div>
 
+
+</main><!-- End #main -->
 </body>
 
 
 <!-- Script -->
 <script src="https://kit.fontawesome.com/d0d085cd83.js" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="assets/js/api.js"></script>
 <script src="assets/js/script.js"></script>
