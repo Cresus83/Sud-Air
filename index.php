@@ -30,11 +30,27 @@ ini_set('display_errors', 'on');
 <body class="unselectable">
 
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center justify-content-center">
+<section id="hero">
     <video src="assets/img/video.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
 
     <div class="container">
+        <h1>Consultez la qualité de l’air de la région Provence-Alpes Côte d’Azur !</h1>
+            <div class="wrapper">
+                <div class="search-input">
+                    <a href="" target="_blank" hidden></a>
+                    <input id="search" class="input" type="text" placeholder="Recherchez votre ville...">
+                    <div class="autocom-box">
 
+                    </div>
+                    <div class="icon"><i class="fas fa-search"></i></div>
+                    <div class="">
+                        <ul>
+                            <li class="liststyle"><i class="fa-solid fa-location-dot icons"></i>Test</li>
+                        </ul>
+                    </div>
+                </div>
+                <p>Powered by AtmoSud</p>
+            </div>
 
     </div>
 </section><!-- End Hero -->
@@ -85,24 +101,6 @@ ini_set('display_errors', 'on');
         </div>
     </section>--><!-- End Services Section -->
 
-    <div class="wrapper">
-        <div class="search-input">
-            <a href="" target="_blank" hidden></a>
-            <input id="search" class="input" type="text" placeholder="Recherchez votre ville...">
-            <div class="autocom-box">
-
-            </div>
-            <div class="icon"><i class="fas fa-search"></i></div>
-            <div class="">
-                <ul>
-                    <li class="liststyle"><i class="fa-solid fa-location-dot icons"></i>Test</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div id="difuser"></div>
-
 
 </main><!-- End #main -->
 </body>
@@ -116,5 +114,5 @@ ini_set('display_errors', 'on');
 <script src="assets/js/api.js"></script>
 <script src="assets/js/script.js"></script>
 
-</body>
+
 </html>
