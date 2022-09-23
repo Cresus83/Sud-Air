@@ -185,7 +185,7 @@ section {
 .conseil-box {
     margin: auto;
     height: 50px;
-    width: 65vw;
+    width: 100%;
     background: #fff;
     border-radius: 50px;
     box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.12);

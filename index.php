@@ -21,12 +21,35 @@ ini_set('display_errors', 'on');
     <meta name="twitter:description" content="Sud'Air, première agence locale dédiée à l'évaluation de la qualité de l'air de la région Provence-Alpes-Côte-d'Azur"/>
     <title>Sud'Air | Accueil</title>
 
-    <!-- Links -->
-    <link href="assets/img/favicon.svg" rel="icon">
-    <link href="assets/css/accueil.css" rel="stylesheet">
-    <!--<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">-->
+    <?php
+    ini_set('display_errors', 'on');
+    ?>
 
-</head>
+    <!doctype html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description"
+              content="Sud'Air, première agence locale dédiée à l'évaluation de la qualité de l'air de la région Provence-Alpes-Côte-d'Azur"/>
+        <meta name="robots" content="index, follow"/>
+        <meta property="og:title" content="Sud'Air | Accueil"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="#">
+        <meta property="og:description" content="Sud'Air, première agence locale dédiée à l'évaluation de la qualité de l'air de la région Provence-Alpes-Côte-d'Azur"/>
+        <meta property="og:locale" content="fr_FR"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:title" content="Sud'Air | Accueil"/>
+        <meta name="twitter:description" content="Sud'Air, première agence locale dédiée à l'évaluation de la qualité de l'air de la région Provence-Alpes-Côte-d'Azur"/>
+        <title>Sud'Air | Accueil</title>
+
+        <!-- Links -->
+        <link href="assets/img/favicon.svg" rel="icon">
+        <link href="assets/css/accueil.css" rel="stylesheet">
+        <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+    </head>
 <body class="unselectable">
 
 <!-- ======= Hero Section ======= -->
@@ -35,24 +58,24 @@ ini_set('display_errors', 'on');
 
     <div class="container" id="container-hero">
         <h1>Consultez la qualité de l’air de la région Provence-Alpes Côte d’Azur !</h1>
-            <div class="wrapper">
-                <div class="search-input">
-                    <a href="" target="_blank" hidden></a>
-                    <input id="search" class="input" type="text" placeholder="Recherchez votre ville...">
-                    <div class="autocom-box">
+        <div class="wrapper">
+            <div class="search-input">
+                <a href="" target="_blank" hidden></a>
+                <input id="search" class="input" type="text" placeholder="Recherchez votre ville...">
+                <div class="autocom-box">
 
-                    </div>
-                    <div class="icon"><i class="fas fa-search"></i></div>
-                    <div class="" id="selected">
-                        <ul id="listsearch">
-
-                        </ul>
-                    </div>
                 </div>
-                <p>Powered by AtmoSud</p>
+                <div class="icon"><i class="fas fa-search"></i></div>
+                <div class="" id="selected">
+                    <ul id="listsearch">
+
+                    </ul>
+                </div>
             </div>
+            <p>Powered by AtmoSud</p>
+        </div>
         <div class="conseil-box">
-            <img alt="lightbulb-conseil" src="assets/img/lightbulb.png"><p>Nos conseils pour améliorer votre bien-être et respirer un air meilleur.</p><i class="fal fa-arrow-right"></i>
+            <img alt="lightbulb-conseil" src="assets/img/lightbulb.png"><p>Nos conseils pour améliorer votre bien-être et respirer un air meilleur.</p><i style="font-size: 35px;margin-left: 960px;position: absolute" class="ri-arrow-right-s-line"></i>
         </div>
 
     </div>
@@ -110,7 +133,7 @@ ini_set('display_errors', 'on');
 
 
 <!-- Script -->
-<script src="https://kit.fontawesome.com/d0d085cd83.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/b5858ea88a.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
