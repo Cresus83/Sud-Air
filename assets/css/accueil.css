@@ -177,7 +177,7 @@ section {
 .liststyle:hover {
   background-color: #664aff;
   color: white;
-  transition: 2s;
+  transition: 1s;
 }
 
 .icons {
