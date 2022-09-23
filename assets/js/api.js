@@ -30,24 +30,17 @@ getVilles().then(
 );
 
 //* Liste les datas de l'API ATMOSUD pour la barre de recherche
+const listsearchbar = document.getElementById("listsearch");
+
 function listData(data) {
-  const listsearchbar = document.getElementById("listsearch");
   clearData();
   if (data.length > 6) {
     for (let i = 0; i < 6; i++) {
-      listsearchbar.innerHTML =
-        "<li class='liststyle ' > <i class='fa-solid fa-location-dot icons'></i>" +
-        data[i].commune +
-        "</li>";
-      console.log(data[i].commune);
+      listsearchbar.innerHTML += `<li class='liststyle' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   } else {
     for (let i = 0; i < data.length; i++) {
-      listsearchbar.innerHTML =
-        "<li class='liststyle' ><i class='fa-solid fa-location-dot icons'></i>" +
-        data[i].commune +
-        "</li>";
-      console.log(data[i].commune);
+      listsearchbar.innerHTML += `<li class='liststyle' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   }
 }
@@ -55,6 +48,7 @@ function listData(data) {
 //* Vide les datas recherchées
 function clearData() {
   console.clear();
+  listsearchbar.innerHTML = "";
 }
 
 function slide() {
