@@ -22,7 +22,7 @@ ini_set('display_errors', 'on');
     <title>Sud'Air | Accueil</title>
 
     <!-- Links -->
-    <link href="assets/img/favicon.ico" rel="icon">
+    <link href="assets/img/favicon.svg" rel="icon">
     <link href="assets/css/accueil.css" rel="stylesheet">
     <!--<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">-->
 
@@ -33,7 +33,7 @@ ini_set('display_errors', 'on');
 <section id="hero">
     <video src="assets/img/video.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
 
-    <div class="container">
+    <div class="container" id="container-hero">
         <h1>Consultez la qualité de l’air de la région Provence-Alpes Côte d’Azur !</h1>
             <div class="wrapper">
                 <div class="search-input">
@@ -51,6 +51,9 @@ ini_set('display_errors', 'on');
                 </div>
                 <p>Powered by AtmoSud</p>
             </div>
+        <div class="conseil-box">
+            <img alt="lightbulb-conseil" src="assets/img/lightbulb.png"><p>Nos conseils pour améliorer votre bien-être et respirer un air meilleur.</p><i class="fal fa-arrow-right"></i>
+        </div>
 
     </div>
 </section><!-- End Hero -->
