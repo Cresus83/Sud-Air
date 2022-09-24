@@ -54,7 +54,7 @@ ini_set('display_errors', 'on');
 
 <!-- ======= Hero Section ======= -->
 <section id="hero">
-    <video src="assets/img/video.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
+    <video src="assets/img/hero-main.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
 
     <div class="container" id="container-hero">
         <h1>Consultez la qualité de l’air de la région Provence-Alpes Côte d’Azur !</h1>
@@ -83,50 +83,92 @@ ini_set('display_errors', 'on');
 
 <main id="main">
 
-    <!-- ======= Services Section ======= -->
-    <!--<section class="services">
-        <div class="container">
+    <!-- ======= Section Qualité de l'air ======= -->
+    <section id="hero">
+        <video src="assets/img/air-quality.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
 
-            <div class="section-title">
-                <h2>Nos Services</h2>
-                <p>UN LARGE CHOIX DE PRESTATIONS.</p>
+        <div class="container" id="container-hero">
+            <h1>Consultez la qualité de l’air de la région Provence-Alpes Côte d’Azur !</h1>
+            <div class="wrapper">
+                <div class="search-input">
+                    <a href="" target="_blank" hidden></a>
+                    <input id="search" class="input" type="text" placeholder="Recherchez votre ville...">
+                    <div class="autocom-box">
+
+                    </div>
+                    <div class="icon"><i class="fas fa-search"></i></div>
+                    <div class="" id="selected">
+                        <ul id="listsearch">
+
+                        </ul>
+                    </div>
+                </div>
+                <p>Powered by AtmoSud</p>
             </div>
 
-            <div class="row">
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                    <a href="#" class="links-icon-box">
-                        <div class="icon-box">
-                            <div class="icon"><img style="width: 80% "src="assets/img/svg/accueil/laptop-repair.svg" alt="Laptop-repair-icon"></div>
-                            <h4>Réparation Ordinateurs</h4>
-                            <p>D'un ordinateur qui met du temps à démarrer à un qui n'affiche plus rien.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                    <a href="#" class="links-icon-box">
-                        <div class="icon-box">
-                            <div class="icon"><img style="width: 90%" src="assets/img/svg/accueil/phone-repair.svg" alt="Phone-repair-icon"></div>
-                            <h4>Réparation Mobiles</h4>
-                            <p>D'un problème logiciel à un écran cassé ou à un téléphone qui a pris l'eau.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                    <a href="#" class="links-icon-box">
-                        <div class="icon-box">
-                            <div class="icon"><img style="width: 90%" src="assets/img/svg/accueil/phone-refurbished.svg" alt="Phone-refurbished-icon"></div>
-                            <h4>Reconditionnement Mobiles</h4>
-                            <p>Nous reconditionnons sur demande le mobile de vos rêves au prix de ce que vous en ferez !</p>
-                        </div>
-                    </a>
-                </div>
+            <div class="conseil-box">
+                <button><img alt="lightbulb-conseil" src="assets/img/lightbulb.png">Nos conseils pour améliorer votre bien-être et respirer un air meilleur.</button>
             </div>
-
         </div>
-    </section>--><!-- End Services Section -->
+    </section><!-- Fin Qualité de l'air -->
 
+    <!-- ======= Section Indice de risque Pollinique ======= -->
+    <section id="hero">
+        <video src="assets/img/pollen.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
+
+        <div class="container" id="container-hero">
+            <h1>Consultez la qualité de l’air de la région Provence-Alpes Côte d’Azur !</h1>
+            <div class="wrapper">
+                <div class="search-input">
+                    <a href="" target="_blank" hidden></a>
+                    <input id="search" class="input" type="text" placeholder="Recherchez votre ville...">
+                    <div class="autocom-box">
+
+                    </div>
+                    <div class="icon"><i class="fas fa-search"></i></div>
+                    <div class="" id="selected">
+                        <ul id="listsearch">
+
+                        </ul>
+                    </div>
+                </div>
+                <p>Powered by AtmoSud</p>
+            </div>
+
+            <div class="conseil-box">
+                <button><img alt="lightbulb-conseil" src="assets/img/lightbulb.png">Nos conseils pour améliorer votre bien-être et respirer un air meilleur.</button>
+            </div>
+        </div>
+    </section><!-- Fin Indice de risque Pollinique -->
+
+    <!-- ======= Section Prévisions Journalières ======= -->
+    <section id="hero">
+        <video src="assets/img/previsions.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
+
+        <div class="container" id="container-hero">
+            <h1>Consultez la qualité de l’air de la région Provence-Alpes Côte d’Azur !</h1>
+            <div class="wrapper">
+                <div class="search-input">
+                    <a href="" target="_blank" hidden></a>
+                    <input id="search" class="input" type="text" placeholder="Recherchez votre ville...">
+                    <div class="autocom-box">
+
+                    </div>
+                    <div class="icon"><i class="fas fa-search"></i></div>
+                    <div class="" id="selected">
+                        <ul id="listsearch">
+
+                        </ul>
+                    </div>
+                </div>
+                <p>Powered by AtmoSud</p>
+            </div>
+
+            <div class="conseil-box">
+                <button><img alt="lightbulb-conseil" src="assets/img/lightbulb.png">Nos conseils pour améliorer votre bien-être et respirer un air meilleur.</button>
+            </div>
+        </div>
+    </section><!-- Fin Prévisions Journalières -->
 
 </main><!-- End #main -->
 </body>
