@@ -74,10 +74,10 @@ ini_set('display_errors', 'on');
             </div>
             <p>Powered by AtmoSud</p>
         </div>
-        <div class="conseil-box">
-            <img alt="lightbulb-conseil" src="assets/img/lightbulb.png"><p>Nos conseils pour améliorer votre bien-être et respirer un air meilleur.</p><i style="font-size: 35px;margin-left: 960px;position: absolute" class="ri-arrow-right-s-line"></i>
-        </div>
 
+        <div class="conseil-box">
+            <button><img alt="lightbulb-conseil" src="assets/img/lightbulb.png">Nos conseils pour améliorer votre bien-être et respirer un air meilleur.</button>
+        </div>
     </div>
 </section><!-- End Hero -->
 
