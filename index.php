@@ -52,6 +52,10 @@ ini_set('display_errors', 'on');
     </head>
 <body class="unselectable">
 
+<?php
+include_once('_navbar/navbar.php');
+?>
+
 <!-- ======= Hero Section ======= -->
 <section id="hero">
     <video src="assets/img/hero-main.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>

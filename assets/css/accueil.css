@@ -1,5 +1,7 @@
 /*###### IMPORTS ###### */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import "_navbar.css";
+@import "_footer.css";
 /*----------------------*/
 
 /*############################ */
@@ -39,9 +41,9 @@ section {
     user-select: none; /* Likely future */
 }
 
-/*########################## */
-/*###### SECTION HERO ###### */
-/*########################## */
+/*############################# */
+/*###### BACKGROUND SITE ###### */
+/*############################# */
 #hero {
     position: relative;
     height: 100vh;
@@ -254,3 +256,27 @@ section {
 /*###################################################################################################################################### */
 /*###### RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE ###### */
 /*###################################################################################################################################### */
+
+@media (max-width: 828px) {
+    #hero h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 579px) {
+    #hero h1 {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 320px) {
+    #hero h1 {
+        font-size: 15px;
+    }
+    .wrapper p {
+        font-size: 15px;
+    }
+    .conseil-box button {
+        font-size: 10px;
+    }
+}
