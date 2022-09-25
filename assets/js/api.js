@@ -1,3 +1,17 @@
+var date = new Date();
+var current_date =
+  date.getFullYear() +
+  "-" +
+  ("0" + (date.getMonth() + 1)).slice(-2) +
+  "-" +
+  date.getDate();
+var tomorrow_date =
+  date.getFullYear() +
+  "-" +
+  ("0" + (date.getMonth() + 1)).slice(-2) +
+  "-" +
+  (date.getDate() + 1);
+
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
 async function getVilles() {
@@ -36,14 +50,20 @@ function listData(data) {
   clearData();
   if (data.length > 6) {
     for (let i = 0; i < 6; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' id='commune' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   } else {
     for (let i = 0; i < data.length; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' id='commune' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   }
 }
+
+//* Appel de la function slide lors du clic sur une ville
+
+const communeselect = document.getElementById("selected");
+
+communeselect.addEventListener("click", slide);
 
 //* Vide les datas recherchées
 function clearData() {
@@ -51,46 +71,57 @@ function clearData() {
   listsearchbar.innerHTML = "";
 }
 
+//* Slide vers le bas de 960px et appel la function dataSelected
 function slide() {
-  window.scrollTo(0, 1080);
+  window.scrollTo(0, 960);
+  element = document.getElementById("commune");
+  searchValue = element.value;
+
+  dataSelected();
+  getAirQuality();
 }
-//* Slide vers le bas lorsque l'user clique sur sa ville
 
-const communeselect = document.getElementById("selected");
+//* Permet de récolter et stocker/afficher le nom de la commune choisit
+function dataSelected() {
+  let searchThis = element.textContent || element.innerText;
+  let citySelected = document.getElementById("citysearch");
+  citySelected.innerHTML = searchThis;
 
-communeselect.addEventListener("click", slide);
+  console.log(searchValue);
+}
 
-$(document).ready(function () {
-  //* Lorsque la liste déroulante subit un changement d'état le script suivant démarre.
-  $("#test").change(function () {
-    //* Stockage de la valeur de l'option séléctionner dans une variable JS.
-    var cp_insee = $("#test option:selected").val();
+//* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
-    //* Les informations d'accés a l'API, ainsi que l'url permettant la récolte spécifique de données en fonction du CP de la ville selectionné.
-    $.ajax({
-      type: "GET",
-      dataType: "json",
-      url:
-        "https://api.atmosud.org/iqa2021/commune/bulletin/journalier/derniers?format_indice=couleur,qualificatif&indice=iqa&format=json&insee=" +
-        cp_insee +
-        "&srid=2154",
-      headers: {
-        Authorization: "cbea358a42c4815c2d583addf593c1de",
-      },
-      //* Une fois la connexion reussie; stock les différentes données dans 3 variables différentes.
-      success: function (predict) {
-        //* Permet de suivre le résultat depuis la console.
-        console.log(predict);
-        //* Les 3 variables ou les données sont stockées.
-        const date_dif = predict.date_diffusion;
-        const couleur = predict.indices[0].valeurs[0].indice.couleur;
-        const qualif = predict.indices[0].valeurs[0].indice.qualificatif;
-        //* Affichage dans la zone visé par l'ID.
-        $("#difuser").append('<p style="color:blue;">' + date_dif + "</p>");
-        $("#difuser").append(
-          '<h1 style="color:' + couleur + ';">' + qualif + "</h1>"
-        );
-      },
-    });
-  });
-});
+async function getAirQuality() {
+  const response = await fetch(
+    `https://api.atmosud.org/iqa2021/commune/bulletin/journalier?&indice=all&dates_echeances=${current_date},${tomorrow_date}&insee=${searchValue}`
+  );
+  let airdata = await response.json();
+
+  document.getElementById(
+    "pm10"
+  ).innerHTML = `<p style='color:${airdata[0].bulletins[0].valeurs[0].pm10.couleur};'>${airdata[0].bulletins[0].valeurs[0].pm10.qualificatif}</p> `;
+
+  document.getElementById(
+    "pm2"
+  ).innerHTML = `<p style='color:${airdata[0].bulletins[0].valeurs[0]["pm2.5"].couleur};'>${airdata[0].bulletins[0].valeurs[0]["pm2.5"].qualificatif}</p> `;
+
+  document.getElementById(
+    "ozone"
+  ).innerHTML = `<p style='color:${airdata[0].bulletins[0].valeurs[0].o3.couleur};'>${airdata[0].bulletins[0].valeurs[0].o3.qualificatif}</p> `;
+
+  document.getElementById(
+    "azote"
+  ).innerHTML = `<p style='color:${airdata[0].bulletins[0].valeurs[0].no2.couleur};'>${airdata[0].bulletins[0].valeurs[0].no2.qualificatif}</p> `;
+
+  document.getElementById(
+    "souffre"
+  ).innerHTML = `<p style='color:${airdata[0].bulletins[0].valeurs[0].so2.couleur};'>${airdata[0].bulletins[0].valeurs[0].so2.qualificatif}</p> `;
+
+  document.getElementById(
+    "general"
+  ).innerHTML = `<h3 style='color:${airdata[0].bulletins[0].valeurs[0].indice.couleur};'> ${airdata[0].bulletins[0].valeurs[0].indice.qualificatif}</h3><br> `;
+
+  console.log(airdata);
+  return airdata;
+}

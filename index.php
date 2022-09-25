@@ -92,26 +92,41 @@ include_once('_navbar/navbar.php');
         <video src="assets/img/air-quality.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
 
         <div class="container" id="container-hero">
-            <h1>Consultez la qualité de l’air de la région Provence-Alpes Côte d’Azur !</h1>
-            <div class="wrapper">
-                <div class="search-input">
-                    <a href="" target="_blank" hidden></a>
-                    <input id="search" class="input" type="text" placeholder="Recherchez votre ville...">
-                    <div class="autocom-box">
-
-                    </div>
-                    <div class="icon"><i class="fas fa-search"></i></div>
-                    <div class="" id="selected">
-                        <ul id="listsearch">
-
-                        </ul>
-                    </div>
+        <h1>QUALITÉ DE L'AIR A <span style="color:#644bff;" id="citysearch"></span></h1>
+            <div class="Airdata">
+                <h2 style="color:white;">Qualité général de l'air :</h4><br>
+                <div id="general">
                 </div>
-                <p>Powered by AtmoSud</p>
-            </div>
+              <div class="card pm10">
+                <h4>PM 10</h4>
+                <div id="pm10">
 
-            <div class="conseil-box">
-                <button><img alt="lightbulb-conseil" src="assets/img/lightbulb.png">Nos conseils pour améliorer votre bien-être et respirer un air meilleur.</button>
+                </div><br>
+              </div> 
+              <div class="card pm2.5">
+                <h4>PM 2.5</h4>
+                <div id="pm2">
+
+                </div><br>
+              </div> 
+              <div class="card ozone">
+                <h4>OZONE</h4>
+                <div id="ozone">
+
+                </div><br>
+              </div> 
+              <div class="card azote">
+                <h4>AZOTE</h4>
+                <div id="azote">
+
+                </div><br>
+              </div> 
+              <div class="card souffre">
+                <h4>SOUFFRE</h4>
+                <div id="souffre">
+
+                </div><br>
+              </div> 
             </div>
         </div>
     </section><!-- Fin Qualité de l'air -->
@@ -184,7 +199,7 @@ include_once('_navbar/navbar.php');
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="assets/js/api.js"></script>
-<script src="assets/js/script.js"></script>
+
 
 
 </html>
