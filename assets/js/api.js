@@ -50,11 +50,11 @@ function listData(data) {
   clearData();
   if (data.length > 6) {
     for (let i = 0; i < 6; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQality(this, this.value)'  value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQuality(this, this.value)'  value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   } else {
     for (let i = 0; i < data.length; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQality(this, this.value)' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQuality(this, this.value)' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   }
 }
@@ -78,7 +78,7 @@ function slide() {
 
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
-async function getAirQality(com, insee) {
+async function getAirQuality(com, insee) {
   //* Stock les informations de la ville séléctionner dans un <input> puis les stockent dans une variable
   const input = document.getElementById("search");
   input.setAttribute("value", insee);
