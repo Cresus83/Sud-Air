@@ -50,11 +50,11 @@ function listData(data) {
   clearData();
   if (data.length > 6) {
     for (let i = 0; i < 6; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' id='commune' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQality(this, this.value)'  value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   } else {
     for (let i = 0; i < data.length; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' id='commune' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQality(this, this.value)' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   }
 }
@@ -74,27 +74,27 @@ function clearData() {
 //* Slide vers le bas de 960px et appel la function dataSelected
 function slide() {
   window.scrollTo(0, 960);
-  element = document.getElementById("commune");
-  searchValue = element.value;
-
-  dataSelected();
-  getAirQuality();
-}
-
-//* Permet de récolter et stocker/afficher le nom de la commune choisit
-function dataSelected() {
-  let searchThis = element.textContent || element.innerText;
-  let citySelected = document.getElementById("citysearch");
-  citySelected.innerHTML = searchThis;
-
-  console.log(searchValue);
 }
 
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
-async function getAirQuality() {
+async function getAirQality(com, insee) {
+  //* Stock les informations de la ville séléctionner dans un <input> puis les stockent dans une variable
+  const input = document.getElementById("search");
+  input.setAttribute("value", insee);
+  input.value = com.textContent;
+  const searchThis = input.value;
+
+  //* Affiche le nom de la commune sur la section "Qualité de l'air"
+  let citySelected = document.getElementById("citysearch");
+  citySelected.innerHTML = searchThis;
+
+  //* Crée la variable permettant d'attribuer le code insee dans l'url fetch
+  const params = `&insee=${insee}`;
+
+  //* Fetch de l'url visée
   const response = await fetch(
-    `https://api.atmosud.org/iqa2021/commune/bulletin/journalier?&indice=all&dates_echeances=${current_date},${tomorrow_date}&insee=${searchValue}`
+    `https://api.atmosud.org/iqa2021/commune/bulletin/journalier?&indice=all&dates_echeances=${current_date},${tomorrow_date}&${params}`
   );
   let airdata = await response.json();
 
