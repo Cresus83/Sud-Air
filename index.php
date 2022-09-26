@@ -71,9 +71,9 @@ include_once('_navbar/navbar.php');
     <video src="assets/img/air-quality.mp4" autoplay="autoplay" muted="muted" loop="loop"></video>
 
     <div class="container" id="container-hero">
-        <h1>QUALITÉ DE L'AIR A <span style="color:#644bff;" id="citysearch"></span></h1>
-        <div class="Airdata">
-            <h2 style="color:white;">Qualité générale de l'air :</h2><br>
+        <h1>Découvrez la qualité de l'air à <span style="color:#644bff;" id="citysearch"></span>.</h1>
+        <div class="Airdata" style="color:white;">
+            <h2>Qualité générale de l'air :</h2><br>
             <div id="general">
             </div>
             <div class="card pm10">
