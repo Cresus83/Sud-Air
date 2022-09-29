@@ -71,9 +71,9 @@ function clearData() {
   listsearchbar.innerHTML = "";
 }
 
-//* Slide vers le bas de 960px et appel la function dataSelected
+//* Slide vers le bas de 900px et appel la function dataSelected
 function slide() {
-  window.scrollTo(0, 960);
+  window.scrollTo(0, 900);
 }
 
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
@@ -115,7 +115,7 @@ async function getAirQuality(com, insee) {
   ).innerHTML = `<p style='color:${airdata[0].bulletins[0].valeurs[0].no2.couleur};'>${airdata[0].bulletins[0].valeurs[0].no2.qualificatif}</p> `;
 
   document.getElementById(
-    "souffre"
+    "soufre"
   ).innerHTML = `<p style='color:${airdata[0].bulletins[0].valeurs[0].so2.couleur};'>${airdata[0].bulletins[0].valeurs[0].so2.qualificatif}</p> `;
 
   document.getElementById(
