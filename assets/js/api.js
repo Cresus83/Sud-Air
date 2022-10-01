@@ -50,11 +50,11 @@ function listData(data) {
   clearData();
   if (data.length > 6) {
     for (let i = 0; i < 6; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQality(this, this.value)'  value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQuality(this, this.value)'  value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   } else {
     for (let i = 0; i < data.length; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQality(this, this.value)' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQuality(this, this.value)' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   }
 }
@@ -71,14 +71,14 @@ function clearData() {
   listsearchbar.innerHTML = "";
 }
 
-//* Slide vers le bas de 960px et appel la function dataSelected
+//* Slide vers le bas de 900px et appel la function dataSelected
 function slide() {
-  window.scrollTo(0, 960);
+  window.scrollTo(0, 900);
 }
 
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
-async function getAirQality(com, insee) {
+async function getAirQuality(com, insee) {
   //* Stock les informations de la ville séléctionner dans un <input> puis les stockent dans une variable
   const input = document.getElementById("search");
   input.setAttribute("value", insee);
@@ -115,7 +115,7 @@ async function getAirQality(com, insee) {
   ).innerHTML = `<p style='color:${airdata[0].bulletins[0].valeurs[0].no2.couleur};'>${airdata[0].bulletins[0].valeurs[0].no2.qualificatif}</p> `;
 
   document.getElementById(
-    "souffre"
+    "soufre"
   ).innerHTML = `<p style='color:${airdata[0].bulletins[0].valeurs[0].so2.couleur};'>${airdata[0].bulletins[0].valeurs[0].so2.qualificatif}</p> `;
 
   document.getElementById(

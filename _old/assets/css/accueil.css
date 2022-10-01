@@ -1,0 +1,287 @@
+/*###### IMPORTS ###### */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import "_navbar.css";
+@import "_footer.css";
+/*----------------------*/
+
+/*############################ */
+/*###### STRUCTURE SITE ###### */
+/*############################ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color-body);
+}
+
+p,
+a {
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  padding-inline: 5vw;
+}
+
+.unselectable {
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
+}
+
+/*############################# */
+/*###### BACKGROUND SITE ###### */
+/*############################# */
+#hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#container-hero {
+  position: relative;
+  padding-top: 74px;
+  text-align: center;
+}
+
+#hero video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+}
+
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero h1 {
+  font-size: 40px;
+  color: #fff;
+}
+
+/*######################## */
+/*###### SEARCH BAR ###### */
+/*######################## */
+
+.wrapper p {
+  display: flex;
+  justify-content: right;
+  color: #fff;
+  margin-top: 10px;
+}
+
+::selection {
+  color: #fff;
+  background: #664aff;
+}
+
+.wrapper {
+  max-width: 450px;
+  margin: 150px auto;
+}
+
+.wrapper .search-input {
+  background: #fff;
+  width: 100%;
+  border-radius: 50px;
+  position: relative;
+  box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search-input input {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input.active input {
+  border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box {
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.search-input.active .autocom-box {
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.autocom-box li {
+  list-style: none;
+  padding: 8px 12px;
+  color: black;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+
+.search-input.active .autocom-box li {
+  display: block;
+}
+
+.autocom-box li:hover {
+  background: #efefef;
+}
+
+.search-input .icon {
+  position: absolute;
+  right: 0;
+  top: 1px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #644bff;
+  cursor: pointer;
+}
+
+.liststyle {
+  list-style: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.liststyle:hover {
+  background-color: #664aff;
+  color: white;
+  transition: 1s;
+}
+
+.icons {
+  margin-right: 1rem;
+}
+
+/*######################### */
+/*###### CONSEIL BOX ###### */
+/*######################### */
+
+.conseil-box img {
+  width: 35px;
+  height: 35px;
+}
+
+.conseil-box button {
+  padding: 15px 40px;
+  background: #fff;
+  border-radius: 50px;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 3px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}
+
+.conseil-box button::after,
+.conseil-box button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.conseil-box button::after {
+  width: 30px;
+  height: 1px;
+  background: black;
+  transform: translateX(-3px);
+  margin-top: 0;
+}
+
+.conseil-box button::before {
+  content: "";
+  transform: rotate(-135deg) translateX(50%);
+  width: 11px;
+  height: 11px;
+  background: transparent;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: -1px;
+}
+
+.conseil-box button:hover {
+  padding: 15px 60px 15px 20px;
+}
+
+.conseil-box button:hover::after,
+.conseil-box button:hover::before {
+  opacity: 1;
+  right: 15px;
+}
+
+/*Section text */
+.Airdata p {
+  color: white;
+}
+
+/*###################################################################################################################################### */
+/*###### RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE RESPONSIVE ###### */
+/*###################################################################################################################################### */
+
+@media (max-width: 828px) {
+  #hero h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 579px) {
+  #hero h1 {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 320px) {
+  #hero h1 {
+    font-size: 15px;
+  }
+  .wrapper p {
+    font-size: 15px;
+  }
+  .conseil-box button {
+    font-size: 10px;
+  }
+}
