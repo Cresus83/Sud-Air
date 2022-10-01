@@ -88,7 +88,6 @@ section {
   overflow: hidden;
 }
 
-
 #hero video {
   position: absolute;
   min-width: 100%;
@@ -281,11 +280,11 @@ section {
   font-size: 14px;
 }
 
-.breadcrumbs ol li+li {
+.breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li+li::before {
+.breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
   color: #6c757d;
@@ -547,6 +546,10 @@ section {
   padding: 10px 10px 10px 10px;
 }
 
-#pm10, #pm2, #ozone, #azote, #soufre {
-  border:2px solid red;
+#pm10,
+#pm2,
+#ozone,
+#azote,
+#soufre {
+  border-top: 2px solid black;
 }
