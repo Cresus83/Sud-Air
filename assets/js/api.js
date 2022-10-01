@@ -194,19 +194,19 @@ async function getPollens(com, insee) {
   }
 
   if (typeof pollendata.data[0].zones[0].taxons[1] === "undefined") {
-    document.getElementById("p2").innerHTML = `<p>NUL GERMAIN !</p> `;
+    document.getElementById("p2").innerHTML = `<h4>NUL GERMAIN !</h4> `;
   }
   if (typeof pollendata.data[0].zones[0].taxons[2] === "undefined") {
-    document.getElementById("p3").innerHTML = `<p>NUL GERMAIN !</p> `;
+    document.getElementById("p3").innerHTML = `<h4>NUL GERMAIN !</h4> `;
   }
   if (typeof pollendata.data[0].zones[0].taxons[3] === "undefined") {
-    document.getElementById("p4").innerHTML = `<p>NUL GERMAIN !</p> `;
+    document.getElementById("p4").innerHTML = `<h4>NUL GERMAIN !</h4> `;
   }
   if (typeof pollendata.data[0].zones[0].taxons[4] === "undefined") {
-    document.getElementById("p5").innerHTML = `<p>NUL GERMAIN !</p> `;
+    document.getElementById("p5").innerHTML = `<h4>NUL GERMAIN !</h4> `;
   }
   if (typeof pollendata.data[0].zones[0].taxons[5] === "undefined") {
-    document.getElementById("p6").innerHTML = `<p>NUL GERMAIN !</p> `;
+    document.getElementById("p6").innerHTML = `<h4>NUL GERMAIN !</h4> `;
   }
   document.getElementById(
     "generalpollen"
@@ -214,27 +214,27 @@ async function getPollens(com, insee) {
 
   document.getElementById(
     "p1"
-  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[0].taxon}</p> `;
+  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[0].taxon}</h4> `;
 
   document.getElementById(
     "p2"
-  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[1].taxon}</p> `;
+  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[1].taxon}</h4> `;
 
   document.getElementById(
     "p3"
-  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[2].taxon}</p> `;
+  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[2].taxon}</h4> `;
 
   document.getElementById(
     "p4"
-  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[3].taxon}</p> `;
+  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[3].taxon}</h4> `;
 
   document.getElementById(
     "p5"
-  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[4].taxon}</p> `;
+  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[4].taxon}</h4> `;
 
   document.getElementById(
     "p6"
-  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[5].taxon}</p> `;
+  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[5].taxon}</h4> `;
 
   return pollendata;
 }

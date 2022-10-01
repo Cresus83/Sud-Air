@@ -157,37 +157,37 @@ include_once('_navbar/navbar.php');
                   <div class="row d-flex justify-content-center text-center">
                       <div class="col-xs-6 col-sm-2">
                           <div class="custom-card">
-                              <h4 id="p1"></h4>
-                              <img style="width: 100px;height: 100px" src="assets/img/pm10.png" alt="PM10-icon">
-                              <div id="pm10"></div>
+                              <div id="p1"></div>
+                              <img style="width: 100px;height: 100px" src="assets/img/pollen.png" alt="pollen-icon">
+                              
                           </div>
                       </div>
                       <div class="col-xs-6 col-sm-2">
                           <div class="custom-card">
-                              <h4 id="p2"></h4>
-                              <img style="width: 100px;height: 100px" src="assets/img/PM2.webp" alt="PM10-icon">
-                              <div id="pm2"></div>
+                              <div id="p2"></div>
+                              <img style="width: 100px;height: 100px" src="assets/img/pollen.webp" alt="pollen-icon">
+       
                           </div>
                       </div>
                       <div class="col-xs-6 col-sm-2">
                           <div class="custom-card">
-                              <h4 id="p3"></h4>
-                              <img style="width: 100px;height: 100px" src="assets/img/ozone.png" alt="ozone-Symbole">
+                              <div id="p3"></div>
+                              <img style="width: 100px;height: 100px" src="assets/img/pollen.png" alt="pollen-Symbole">
                               <div id="ozone"></div>
                           </div>
                       </div>
                       <div class="col-xs-6 col-sm-2">
                           <div class="custom-card">
-                              <h4 id="p4"></h4>
-                              <img style="width: 100px;height: 100px" src="assets/img/azote.png" alt="azote-Symbole">
-                              <div id="azote"></div>
+                              <div id="p4"></div>
+                              <img style="width: 100px;height: 100px" src="assets/img/pollen.png" alt="pollen-Symbole">
+       
                           </div>
                       </div>
                       <div class="col-xs-6 col-sm-2">
                           <div class="custom-card">
-                              <h4 id="p5"></h4>
-                              <img style="width: 100px;height: 100px" src="assets/img/soufre.png" alt="soufre-Symbole">
-                              <div id="soufre"></div>
+                              <div id="p5"></div>
+                              <img style="width: 100px;height: 100px" src="assets/img/pollen.png" alt="pollen-Symbole">
+                              
                           </div>
                       </div>
                   </div>
