@@ -551,5 +551,6 @@ section {
 #ozone,
 #azote,
 #soufre {
+  margin-top: 1rem;
   border-top: 2px solid black;
 }
