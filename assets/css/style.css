@@ -389,9 +389,13 @@ section {
 .wrapper .search-input {
   background: #fff;
   width: 100%;
-  border-radius: 50px;
+  border-radius: 25px;
   position: relative;
   box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+ul {
+  padding-left: 0;;
 }
 
 .search-input input {
@@ -399,8 +403,8 @@ section {
   width: 100%;
   outline: none;
   border: none;
-  border-radius: 50px;
-  padding: 0 60px 0 20px;
+  border-radius: 25px 25px 0 0;
+  padding: 0 170px 0 20px;
   font-size: 18px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
@@ -443,7 +447,7 @@ section {
 .search-input .icon {
   position: absolute;
   right: 0;
-  top: 1px;
+  top: 0;
   height: 55px;
   width: 55px;
   text-align: center;
@@ -451,23 +455,26 @@ section {
   font-size: 20px;
   color: #644bff;
   cursor: pointer;
+  z-index: 10;
 }
 
 .liststyle {
   list-style: none;
   font-size: 1.1rem;
   cursor: pointer;
+  text-align: center;
 }
 
 .liststyle:hover {
   background-color: #664aff;
-  color: white;
-  transition: 1s;
+  color: #fff;
 }
 
 .icons {
   margin-right: 1rem;
 }
+
+
 
 /*######################### */
 /*###### CONSEIL BOX ###### */
