@@ -1,16 +1,34 @@
 var date = new Date();
-var current_date =
-  date.getFullYear() +
-  "-" +
-  ("0" + (date.getMonth() + 1)).slice(-2) +
-  "-" +
-  date.getDate();
-var tomorrow_date =
-  date.getFullYear() +
-  "-" +
-  ("0" + (date.getMonth() + 1)).slice(-2) +
-  "-" +
-  (date.getDate() + 1);
+//* Récupération de la date + Ajout de 1 zéro si le jour est inférieur a 10
+if (date.getDate() < 10) {
+  var current_date =
+    date.getFullYear() +
+    "-" +
+    ("0" + (date.getMonth() + 1)).slice(-2) +
+    "-" +
+    ("0" + date.getDate());
+  var tomorrow_date =
+    date.getFullYear() +
+    "-" +
+    ("0" + (date.getMonth() + 1)).slice(-2) +
+    "-" +
+    ("0" + (date.getDate() + 1));
+}
+//* Récupération de la date sans ajout de 0
+else {
+  var current_date =
+    date.getFullYear() +
+    "-" +
+    ("0" + (date.getMonth() + 1)).slice(-2) +
+    "-" +
+    date.getDate();
+  var tomorrow_date =
+    date.getFullYear() +
+    "-" +
+    ("0" + (date.getMonth() + 1)).slice(-2) +
+    "-" +
+    (date.getDate() + 1);
+}
 
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
