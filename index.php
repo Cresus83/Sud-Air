@@ -97,35 +97,35 @@ include_once('_navbar/navbar.php');
                           <div class="custom-card">
                               <h4>PM 10</h4>
                               <img style="width: 100px;height: 100px" src="assets/img/pm10.png" alt="PM10-icon">
-                              <div id="pm10"></div><br>
+                              <div id="pm10"></div>
                           </div>
                       </div>
                       <div class="col-xs-6 col-sm-2">
                           <div class="custom-card">
                               <h4>PM 2.5</h4>
                               <img style="width: 100px;height: 100px" src="assets/img/PM2.webp" alt="PM10-icon">
-                              <div id="pm2"></div><br>
+                              <div id="pm2"></div>
                           </div>
                       </div>
                       <div class="col-xs-6 col-sm-2">
                           <div class="custom-card">
                               <h4>OZONE</h4>
                               <img style="width: 100px;height: 100px" src="assets/img/ozone.png" alt="ozone-Symbole">
-                              <div id="ozone"></div><br>
+                              <div id="ozone"></div>
                           </div>
                       </div>
                       <div class="col-xs-6 col-sm-2">
                           <div class="custom-card">
                               <h4>AZOTE</h4>
                               <img style="width: 100px;height: 100px" src="assets/img/azote.png" alt="azote-Symbole">
-                              <div id="azote"></div><br>
+                              <div id="azote"></div>
                           </div>
                       </div>
                       <div class="col-xs-6 col-sm-2">
                           <div class="custom-card">
                               <h4>SOUFRE</h4>
                               <img style="width: 100px;height: 100px" src="assets/img/soufre.png" alt="soufre-Symbole">
-                              <div id="soufre"></div><br>
+                              <div id="soufre"></div>
                           </div>
                       </div>
                   </div>
