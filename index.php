@@ -165,7 +165,7 @@ include_once('_navbar/navbar.php');
                       <div class="col-xs-6 col-sm-2">
                           <div class="custom-card">
                               <div id="p2"></div>
-                              <img style="width: 100px;height: 100px" src="assets/img/pollen.webp" alt="pollen-icon">
+                              <img style="width: 100px;height: 100px" src="assets/img/pollen.png" alt="pollen-icon">
        
                           </div>
                       </div>
