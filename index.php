@@ -133,6 +133,68 @@ include_once('_navbar/navbar.php');
           </div>
     </section>
 
+ <!-- ======= Section Risques Polliniques ======= -->
+ <section id="pollen_risque">
+          <div class="container">
+
+              <div class="section-title">
+                  <span>Risque pollinique</span>
+                  <h2>Risque pollinique</h2>
+              </div>
+
+              <h1 class="text-center">Coup d'œil sur le risque pollinique à <span style="color:#644bff;" id="citysearch2"></span>.</h1>
+
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <div class="Airdata text-center">
+                              <div class="general">
+                                  <h4>Risque pollinique général :</h4>
+                                  <div id="generalpollen"></div><br>
+                              </div>
+                      </div>
+                  </div>
+
+                  <div class="row d-flex justify-content-center text-center">
+                      <div class="col-xs-6 col-sm-2">
+                          <div class="custom-card">
+                              <h4 id="p1"></h4>
+                              <img style="width: 100px;height: 100px" src="assets/img/pm10.png" alt="PM10-icon">
+                              <div id="pm10"></div>
+                          </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-2">
+                          <div class="custom-card">
+                              <h4 id="p2"></h4>
+                              <img style="width: 100px;height: 100px" src="assets/img/PM2.webp" alt="PM10-icon">
+                              <div id="pm2"></div>
+                          </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-2">
+                          <div class="custom-card">
+                              <h4 id="p3"></h4>
+                              <img style="width: 100px;height: 100px" src="assets/img/ozone.png" alt="ozone-Symbole">
+                              <div id="ozone"></div>
+                          </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-2">
+                          <div class="custom-card">
+                              <h4 id="p4"></h4>
+                              <img style="width: 100px;height: 100px" src="assets/img/azote.png" alt="azote-Symbole">
+                              <div id="azote"></div>
+                          </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-2">
+                          <div class="custom-card">
+                              <h4 id="p5"></h4>
+                              <img style="width: 100px;height: 100px" src="assets/img/soufre.png" alt="soufre-Symbole">
+                              <div id="soufre"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </section>
+
   </main><!-- Fin #main -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

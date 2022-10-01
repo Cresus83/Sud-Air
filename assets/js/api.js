@@ -143,3 +143,98 @@ async function getAirQuality(com, insee) {
   console.log(airdata);
   return airdata;
 }
+
+//* Script AJAX permettant la récolte d'information du risque polliniques auprés de L'API Atmosud -->
+
+async function getPollens(com, insee) {
+  //* Stock les informations de la ville séléctionner dans un <input> puis les stockent dans une variable
+  const input = document.getElementById("search");
+  input.setAttribute("value", insee);
+  input.value = com.textContent;
+  const searchThis = input.value;
+  console.log(searchThis);
+
+  if (insee == 83137) {
+    zone = 3531;
+  } else if (insee == 13001) {
+    zone = 3526;
+  } else if (insee == 84007) {
+    zone = 3527;
+  } else if (insee == 13055) {
+    zone = 3529;
+  } else if (insee == 6088) {
+    zone = 3530;
+  } else if (insee == 5061) {
+    zone = 3528;
+  } else if (insee == 83050) {
+    zone = 4982;
+  }
+
+  //* Affiche le nom de la commune sur la section "Qualité de l'air"
+  let citySelected = document.getElementById("citysearch2");
+  citySelected.innerHTML = searchThis;
+
+  //* Crée la variable permettant d'attribuer le code insee dans l'url fetch
+  const params = `zones/${zone}`;
+
+  //* Fetch de l'url visée
+  const response = await fetch(`https://api.atmosud.org/pollens/${params}`);
+  let pollendata = await response.json();
+  couleur = pollendata.data[0].zones[0].indice;
+  if (couleur == 1) {
+    couleurind = "#377D22";
+  } else if (couleur == 2) {
+    couleurind = "#FFA800";
+  } else if (couleur == 3) {
+    couleurind = "#AE0F0F";
+  }
+
+  if (typeof pollendata.data[0].zones[0].taxons[0] === "undefined") {
+    document.getElementById("p1").innerHTML = `<p>NUL GERMAIN !</p> `;
+  }
+
+  if (typeof pollendata.data[0].zones[0].taxons[1] === "undefined") {
+    document.getElementById("p2").innerHTML = `<p>NUL GERMAIN !</p> `;
+  }
+  if (typeof pollendata.data[0].zones[0].taxons[2] === "undefined") {
+    document.getElementById("p3").innerHTML = `<p>NUL GERMAIN !</p> `;
+  }
+  if (typeof pollendata.data[0].zones[0].taxons[3] === "undefined") {
+    document.getElementById("p4").innerHTML = `<p>NUL GERMAIN !</p> `;
+  }
+  if (typeof pollendata.data[0].zones[0].taxons[4] === "undefined") {
+    document.getElementById("p5").innerHTML = `<p>NUL GERMAIN !</p> `;
+  }
+  if (typeof pollendata.data[0].zones[0].taxons[5] === "undefined") {
+    document.getElementById("p6").innerHTML = `<p>NUL GERMAIN !</p> `;
+  }
+  document.getElementById(
+    "generalpollen"
+  ).innerHTML = `<h2 style='color:${couleurind};'> ${pollendata.data[0].zones[0].indice}</h2><br> `;
+
+  document.getElementById(
+    "p1"
+  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[0].taxon}</p> `;
+
+  document.getElementById(
+    "p2"
+  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[1].taxon}</p> `;
+
+  document.getElementById(
+    "p3"
+  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[2].taxon}</p> `;
+
+  document.getElementById(
+    "p4"
+  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[3].taxon}</p> `;
+
+  document.getElementById(
+    "p5"
+  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[4].taxon}</p> `;
+
+  document.getElementById(
+    "p6"
+  ).innerHTML = `<p style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[5].taxon}</p> `;
+
+  return pollendata;
+}
