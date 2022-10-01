@@ -173,7 +173,6 @@ include_once('_navbar/navbar.php');
                           <div class="custom-card">
                               <div id="p3"></div>
                               <img style="width: 100px;height: 100px" src="assets/img/pollen.png" alt="pollen-Symbole">
-                              <div id="ozone"></div>
                           </div>
                       </div>
                       <div class="col-xs-6 col-sm-2">
@@ -186,6 +185,13 @@ include_once('_navbar/navbar.php');
                       <div class="col-xs-6 col-sm-2">
                           <div class="custom-card">
                               <div id="p5"></div>
+                              <img style="width: 100px;height: 100px" src="assets/img/pollen.png" alt="pollen-Symbole">
+                              
+                          </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-2">
+                          <div class="custom-card">
+                              <div id="p6"></div>
                               <img style="width: 100px;height: 100px" src="assets/img/pollen.png" alt="pollen-Symbole">
                               
                           </div>
