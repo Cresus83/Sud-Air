@@ -68,11 +68,11 @@ function listData(data) {
   clearData();
   if (data.length > 6) {
     for (let i = 0; i < 6; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQuality(this, this.value)'  value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQuality(this, this.value);getPollens(this, this.value)'  value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   } else {
     for (let i = 0; i < data.length; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQuality(this, this.value)' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQuality(this, this.value);getPollens(this, this.value)' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   }
 }
