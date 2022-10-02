@@ -550,7 +550,7 @@ ul {
     border-radius: 0.375rem;
     font-size: 23px;
     padding: 10px 0 0 0;
-    margin: 10px 0px 10px 0px;
+    margin: 10px 0 10px 0;
 }
 
 #pm10,
@@ -568,6 +568,34 @@ ul {
     border-top: 2px solid black;
 }
 
-h4 {
+h2, h4 {
     margin-bottom: 0;
+}
+
+.general-pollen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+.circle {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    border: 7px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.circle, .indice-pollinique {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
 }

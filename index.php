@@ -150,85 +150,85 @@ include_once('_navbar/navbar.php');
                                                                                 id="citysearch2"></span>.</h1>
 
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="Airdata text-center">
-                                <div class="general">
-                                    <h4>Risque pollinique général :</h4>
-                                    <div id="generalpollen"></div>
-                                    <br>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="row d-flex justify-content-center text-center">
-                                <div class="col-sm-4">
-                                    <div class="custom-card">
-                                        <h4>AMBROISIES</h4>
-                                        <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                             alt="pollen-icon">
-                                        <div id="p1"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="custom-card">
-                                        <h4>GRAMINEES</h4>
-                                        <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                             alt="pollen-icon">
-                                        <div id="p2"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="custom-card">
-                                        <h4>SAULE</h4>
-                                        <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                             alt="pollen-Symbole">
-                                        <div id="p3"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="custom-card">
-                                        <h4>PEUPLIER</h4>
-                                        <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                             alt="pollen-Symbole">
-                                        <div id="p4"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="custom-card">
-                                        <h4>PLANTAIN</h4>
-                                        <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                             alt="pollen-Symbole">
-                                        <div id="p5"></div>
-
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="custom-card">
-                                        <h4>PLATANE</h4>
-                                        <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                             alt="pollen-Symbole">
-                                        <div id="p6"></div>
-                                    </div>
-                                </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="Airdata text-center">
+                            <h4>Risque pollinique général :</h4>
+                            <div class="indice-pollinique">
+                                <img class="general-pollen" style="width: 30%;height: 30%" src="assets/img/pollen.png"
+                                     alt="pollen-icon">
+                                <div id="generalpollen" class="circle"></div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-md-7">
+                        <div class="row d-flex justify-content-center text-center">
+                            <div class="col-sm-4">
+                                <div class="custom-card">
+                                    <h4>AMBROISIES</h4>
+                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
+                                         alt="pollen-icon">
+                                    <div id="p1"></div>
+                                </div>
+                            </div>
 
+                            <div class="col-sm-4">
+                                <div class="custom-card">
+                                    <h4>GRAMINEES</h4>
+                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
+                                         alt="pollen-icon">
+                                    <div id="p2"></div>
+                                </div>
+                            </div>
 
+                            <div class="col-sm-4">
+                                <div class="custom-card">
+                                    <h4>SAULE</h4>
+                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
+                                         alt="pollen-Symbole">
+                                    <div id="p3"></div>
+                                </div>
+                            </div>
 
-                <div class="container">
-                    <div class="row">
+                            <div class="col-sm-4">
+                                <div class="custom-card">
+                                    <h4>PEUPLIER</h4>
+                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
+                                         alt="pollen-Symbole">
+                                    <div id="p4"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="custom-card">
+                                    <h4>PLANTAIN</h4>
+                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
+                                         alt="pollen-Symbole">
+                                    <div id="p5"></div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="custom-card">
+                                    <h4>PLATANE</h4>
+                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
+                                         alt="pollen-Symbole">
+                                    <div id="p6"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </div>
     </section>
 
 </main><!-- Fin #main -->

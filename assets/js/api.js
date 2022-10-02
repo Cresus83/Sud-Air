@@ -190,22 +190,22 @@ async function getPollens(com, insee) {
   }
 
   if (typeof pollendata.data[0].zones[0].taxons[0] === "undefined") {
-    document.getElementById("p1").innerHTML = `<h4 style="text-align: center;background-color: red;color: #fff;">Indisponible</h4> `;
+    document.getElementById("p1").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
   }
   if (typeof pollendata.data[0].zones[0].taxons[1] === "undefined") {
-    document.getElementById("p2").innerHTML = `<h4 style="text-align: center;background-color: red;color: #fff;">Indisponible</h4> `;
+    document.getElementById("p2").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
   }
   if (typeof pollendata.data[0].zones[0].taxons[2] === "undefined") {
-    document.getElementById("p3").innerHTML = `<h4 style="text-align: center;background-color: red;color: #fff;">Indisponible</h4> `;
+    document.getElementById("p3").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
   }
   if (typeof pollendata.data[0].zones[0].taxons[3] === "undefined") {
-    document.getElementById("p4").innerHTML = `<h4 style="text-align: center;background-color: red;color: #fff;">Indisponible</h4> `;
+    document.getElementById("p4").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
   }
   if (typeof pollendata.data[0].zones[0].taxons[4] === "undefined") {
-    document.getElementById("p5").innerHTML = `<h4 style="text-align: center;background-color: red;color: #fff;">Indisponible</h4> `;
+    document.getElementById("p5").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
   }
   if (typeof pollendata.data[0].zones[0].taxons[5] === "undefined") {
-    document.getElementById("p6").innerHTML = `<h4 style="text-align: center;background-color: red;color: #fff;">Indisponible</h4> `;
+    document.getElementById("p6").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
   }
   document.getElementById(
     "generalpollen"
