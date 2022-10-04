@@ -202,6 +202,7 @@ function pollenData(pollendata) {
   console.log(taxons);
 
   for (let i = 0; i < taxons.length; i++) {
+    console.log(taxons[i]);
     var taxonsarray = Array(taxons[i].dataset["taxon"]);
     function findEqualDatas(taxonsarray, taxonstab) {
       return taxonsarray.some((item) => taxonstab[0].includes(item));
