@@ -210,11 +210,11 @@ function pollenData(pollendata) {
     console.log(divId);
     if (findEqualDatas(taxonsarray, taxonstab) == true) {
       document.getElementById(
-        "p1"
+        "p" + i
       ).innerHTML = `<h4 style='color:${couleurind};'>Présent</h4></div> `;
     } else {
       document.getElementById(
-        "p1"
+        "p" + i
       ).innerHTML = `<h4 style='color:white;background-color:#AE0F0F;'>Indisponible</h4></div>`;
     }
   }
