@@ -97,6 +97,11 @@ function slide() {
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
 async function getAirQuality(com, insee) {
+  if (insee.length < 5) {
+    insee = "0" + insee;
+  } else {
+    console.log("insee a 5 chiffres");
+  }
   //* Stock les informations de la ville séléctionner dans un <input> puis les stockent dans une variable
   const input = document.getElementById("search");
   input.setAttribute("value", insee);
@@ -162,7 +167,7 @@ async function getPollens(com, insee) {
     zone = 3527;
   } else if (insee == 13055) {
     zone = 3529;
-  } else if (insee == 6088) {
+  } else if (insee == "06088") {
     zone = 3530;
   } else if (insee == 05061) {
     zone = 3528;
