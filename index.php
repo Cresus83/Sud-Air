@@ -231,8 +231,8 @@ include_once('_navbar/navbar.php');
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card taxons" data-taxon="Pin">
-                                    <h4>PINS</h4>
+                                <div class="custom-card taxons" data-taxon="Urticacées">
+                                    <h4>Urticacées</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
                                     <div id="p7"></div>
