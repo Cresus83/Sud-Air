@@ -169,7 +169,7 @@ include_once('_navbar/navbar.php');
                                     <h4>AMBROISIES</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-icon">
-                                    <div id="p1"></div>
+                                    <div id="p"></div>
                                 </div>
                             </div>
 
@@ -178,7 +178,7 @@ include_once('_navbar/navbar.php');
                                     <h4>GRAMINEES</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-icon">
-                                    <div id="p2"></div>
+                                    <div id="p1"></div>
                                 </div>
                             </div>
 
@@ -187,7 +187,7 @@ include_once('_navbar/navbar.php');
                                     <h4>SAULE</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
-                                    <div id="p3"></div>
+                                    <div id="p2"></div>
                                 </div>
                             </div>
 
@@ -196,7 +196,7 @@ include_once('_navbar/navbar.php');
                                     <h4>PEUPLIER</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
-                                    <div id="p4"></div>
+                                    <div id="p3"></div>
                                 </div>
                             </div>
 
@@ -205,7 +205,7 @@ include_once('_navbar/navbar.php');
                                     <h4>PLANTAIN</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
-                                    <div id="p5"></div>
+                                    <div id="p4"></div>
 
                                 </div>
                             </div>
@@ -215,7 +215,7 @@ include_once('_navbar/navbar.php');
                                     <h4>PLATANE</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
-                                    <div id="p6"></div>
+                                    <div id="p5"></div>
                                 </div>
                             </div>
 
@@ -224,7 +224,7 @@ include_once('_navbar/navbar.php');
                                     <h4>ARMOISES</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
-                                    <div id="p5"></div>
+                                    <div id="p6"></div>
 
                                 </div>
                             </div>
@@ -234,7 +234,7 @@ include_once('_navbar/navbar.php');
                                     <h4>PINS</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
-                                    <div id="p5"></div>
+                                    <div id="p7"></div>
 
                                 </div>
                             </div>
@@ -244,7 +244,7 @@ include_once('_navbar/navbar.php');
                                     <h4>OSEILLES</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
-                                    <div id="p5"></div>
+                                    <div id="p8"></div>
 
                                 </div>
                             </div>

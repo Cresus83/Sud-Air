@@ -208,5 +208,14 @@ function pollenData(pollendata) {
     }
     const divId = "p" + i;
     console.log(divId);
+    if (findEqualDatas(taxonsarray, taxonstab) == true) {
+      document.getElementById(
+        divId
+      ).innerHTML = `<h4 style='color:${couleurind};'>Présent</h4></div> `;
+    } else {
+      document.getElementById(
+        divId
+      ).innerHTML = `<h4 style='color:white;background-color:#AE0F0F;'>Indisponible</h4></div>`;
+    }
   }
 }
