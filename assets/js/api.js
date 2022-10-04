@@ -207,7 +207,9 @@ function pollenData(pollendata) {
       return taxonsarray.some((item) => taxonstab[0].includes(item));
     }
     if (findEqualDatas(taxonsarray, taxonstab) == true) {
-      taxons[i].innerHTML = `<h4 style='color:${couleurind};'>Présent</h4> `;
+      taxons[i].innerHTML = `<h4>PEUPLIER</h4>
+      <img style="width: 100px;height: 100px" src="assets/img/pollen.png" alt="pollen-Symbole">
+      <h4 style='color:${couleurind};'>Présent</h4> `;
     } else {
       taxons[i].innerHTML = `<h4 style='color:red;'>INDSPONIBLE</h4> `;
     }
