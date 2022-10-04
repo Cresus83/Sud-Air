@@ -97,15 +97,18 @@ function slide() {
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
 async function getAirQuality(com, insee) {
-  if (insee.length < 5) {
-    insee = "0" + insee;
-  } else {
-    console.log("insee a 5 chiffres");
-  }
   //* Stock les informations de la ville séléctionner dans un <input> puis les stockent dans une variable
   const input = document.getElementById("search");
   input.setAttribute("value", insee);
-  input.value = com.textContent;
+  if (input.value.length < 5) {
+    insee = "0" + insee;
+    input.value = com.textContent;
+    console.log(insee);
+  } else {
+    console.log("insee a 5 chiffres");
+    input.value = com.textContent;
+  }
+
   const searchThis = input.value;
 
   //* Affiche le nom de la commune sur la section "Qualité de l'air"
