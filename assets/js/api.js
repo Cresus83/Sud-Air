@@ -99,7 +99,14 @@ function slide() {
 async function getAirQuality(com, insee) {
   //* Stock les informations de la ville séléctionner dans un <input> puis les stockent dans une variable
   const input = document.getElementById("search");
-  input.setAttribute("value", insee);
+  insee = JSON.stringify(insee);
+  insee2 = "0" + insee;
+
+  if (insee.length == 4) {
+    input.setAttribute("value", insee2);
+  } else {
+    input.setAttribute("value", insee);
+  }
   input.value = com.textContent;
   const searchThis = input.value;
 
@@ -108,7 +115,12 @@ async function getAirQuality(com, insee) {
   citySelected.innerHTML = searchThis;
 
   //* Crée la variable permettant d'attribuer le code insee dans l'url fetch
-  const params = `&insee=${insee}`;
+
+  if (insee.length == 4) {
+    params = `&insee=${insee2}`;
+  } else {
+    params = `&insee=${insee}`;
+  }
 
   //* Fetch de l'url visée
   const response = await fetch(
