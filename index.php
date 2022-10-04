@@ -165,7 +165,7 @@ include_once('_navbar/navbar.php');
                     <div class="col-md-7">
                         <div class="row d-flex justify-content-center text-center">
                             <div class="col-sm-4">
-                                <div class="custom-card">
+                                <div class="custom-card taxons" data-taxon="Ambroisies">
                                     <h4>AMBROISIES</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-icon">
@@ -174,7 +174,7 @@ include_once('_navbar/navbar.php');
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card">
+                                <div class="custom-card taxons" data-taxon="Graminées">
                                     <h4>GRAMINEES</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-icon">
@@ -183,7 +183,7 @@ include_once('_navbar/navbar.php');
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card">
+                                <div class="custom-card taxons" data-taxon="Saule">
                                     <h4>SAULE</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
@@ -192,7 +192,7 @@ include_once('_navbar/navbar.php');
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card">
+                                <div class="custom-card taxons" data-taxon="Peuplier">
                                     <h4>PEUPLIER</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
@@ -201,7 +201,7 @@ include_once('_navbar/navbar.php');
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card">
+                                <div class="custom-card taxons" data-taxon="Plantain">
                                     <h4>PLANTAIN</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
@@ -211,11 +211,41 @@ include_once('_navbar/navbar.php');
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card">
+                                <div class="custom-card taxons" data-taxon="Platane">
                                     <h4>PLATANE</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
                                     <div id="p6"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="custom-card taxons" data-taxon="Armoise">
+                                    <h4>ARMOISES</h4>
+                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
+                                         alt="pollen-Symbole">
+                                    <div id="p5"></div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="custom-card taxons" data-taxon="Pin">
+                                    <h4>PINS</h4>
+                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
+                                         alt="pollen-Symbole">
+                                    <div id="p5"></div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="custom-card taxons" data-taxon="Oseille">
+                                    <h4>OSEILLES</h4>
+                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
+                                         alt="pollen-Symbole">
+                                    <div id="p5"></div>
+
                                 </div>
                             </div>
                         </div>

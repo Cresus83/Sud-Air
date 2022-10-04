@@ -180,6 +180,11 @@ async function getPollens(com, insee) {
   //* Fetch de l'url visée
   const response = await fetch(`https://api.atmosud.org/pollens/${params}`);
   let pollendata = await response.json();
+  pollenData(pollendata);
+  return pollendata;
+}
+
+function pollenData(pollendata) {
   couleur = pollendata.data[0].zones[0].indice;
   if (couleur == 1) {
     couleurind = "#377D22";
@@ -189,51 +194,22 @@ async function getPollens(com, insee) {
     couleurind = "#AE0F0F";
   }
 
-  if (typeof pollendata.data[0].zones[0].taxons[0] === "undefined") {
-    document.getElementById("p1").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
+  const taxonstab = new Array(
+    JSON.stringify(pollendata.data[0].zones[0].taxons)
+  );
+
+  const taxons = document.querySelectorAll(".taxons");
+  console.log(taxons);
+
+  for (let i = 0; i < taxons.length; i++) {
+    var taxonsarray = Array(taxons[i].dataset["taxon"]);
+    function findEqualDatas(taxonsarray, taxonstab) {
+      return taxonsarray.some((item) => taxonstab[0].includes(item));
+    }
+    if (findEqualDatas(taxonsarray, taxonstab) == true) {
+      taxons[i].innerHTML = `<h4 style='color:${couleurind};'>Présent</h4> `;
+    } else {
+      taxons[i].innerHTML = `<h4 style='color:red;'>INDSPONIBLE</h4> `;
+    }
   }
-  if (typeof pollendata.data[0].zones[0].taxons[1] === "undefined") {
-    document.getElementById("p2").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
-  }
-  if (typeof pollendata.data[0].zones[0].taxons[2] === "undefined") {
-    document.getElementById("p3").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
-  }
-  if (typeof pollendata.data[0].zones[0].taxons[3] === "undefined") {
-    document.getElementById("p4").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
-  }
-  if (typeof pollendata.data[0].zones[0].taxons[4] === "undefined") {
-    document.getElementById("p5").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
-  }
-  if (typeof pollendata.data[0].zones[0].taxons[5] === "undefined") {
-    document.getElementById("p6").innerHTML = `<h4 style="text-align: center;background-color: #AE0F0F;color: #fff;">Indisponible</h4> `;
-  }
-  document.getElementById(
-    "generalpollen"
-  ).innerHTML = `<h2 style='color:${couleurind};'> ${pollendata.data[0].zones[0].indice}</h2><br> `;
-
-  document.getElementById(
-    "p1"
-  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[0].taxon}</h4> `;
-
-  document.getElementById(
-    "p2"
-  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[1].taxon}</h4> `;
-
-  document.getElementById(
-    "p3"
-  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[2].taxon}</h4> `;
-
-  document.getElementById(
-    "p4"
-  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[3].taxon}</h4> `;
-
-  document.getElementById(
-    "p5"
-  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[4].taxon}</h4> `;
-
-  document.getElementById(
-    "p6"
-  ).innerHTML = `<h4 style='color:${couleurind};'>${pollendata.data[0].zones[0].taxons[5].taxon}</h4> `;
-
-  return pollendata;
 }
