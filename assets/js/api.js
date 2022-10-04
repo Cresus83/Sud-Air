@@ -206,7 +206,8 @@ function pollenData(pollendata) {
     function findEqualDatas(taxonsarray, taxonstab) {
       return taxonsarray.some((item) => taxonstab[0].includes(item));
     }
-    const divId = `p${i}`;
+    const divId = "p" + i;
+    console.log(divId);
     if (findEqualDatas(taxonsarray, taxonstab) == true) {
       document.getElementById(
         divId
