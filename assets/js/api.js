@@ -183,8 +183,9 @@ async function getPollens(com, insee) {
   pollenData(pollendata);
   return pollendata;
 }
-
+//* Fonction permettant de filtrer et afficher les données du pollen
 function pollenData(pollendata) {
+  //* Récupération de la couleur de l'indice général
   couleur = pollendata.data[0].zones[0].indice;
   if (couleur == 1) {
     couleurind = "#377D22";
@@ -194,28 +195,40 @@ function pollenData(pollendata) {
     couleurind = "#AE0F0F";
   }
 
+  //* Création d'un tableau pour lister les taxons détéctées par la station
   const taxonstab = new Array(
     JSON.stringify(pollendata.data[0].zones[0].taxons)
   );
 
+  //* Liste les div portant la classe '.taxons'
   const taxons = document.querySelectorAll(".taxons");
-  console.log(taxons);
 
+  //* Boucle permettant de comparer les 2 tableaux et d'afficher leurs présences ou non
   for (let i = 0; i < taxons.length; i++) {
+    //* Création d'un tableau pour lister les div possédant la dataset 'taxon'
     var taxonsarray = Array(taxons[i].dataset["taxon"]);
+
+    //* Fonction permettant la comparaison des 2 tableaux
     function findEqualDatas(taxonsarray, taxonstab) {
       return taxonsarray.some((item) => taxonstab[0].includes(item));
     }
-    const divId = "p" + i;
-    console.log(divId);
+
+    //* Vérification de la sortie de la fonction de comparaison
+    //* Si 'true' ajoute au sein du DOM le texte 'Présent'
     if (findEqualDatas(taxonsarray, taxonstab) == true) {
       document.getElementById(
         "p" + i
       ).innerHTML = `<h4 style='color:${couleurind};'>Présent</h4></div> `;
-    } else {
+    }
+    //* Si 'false' ajoute au sein du DOM le texte 'Indisponible'
+    else {
       document.getElementById(
         "p" + i
       ).innerHTML = `<h4 style='color:white;background-color:#AE0F0F;'>Indisponible</h4></div>`;
     }
   }
+  //* Affichage de l'indice général
+  document.getElementById(
+    "generalpollen"
+  ).innerHTML = `<h2 style='color:${couleurind};'> ${pollendata.data[0].zones[0].indice}</h2><br> `;
 }
