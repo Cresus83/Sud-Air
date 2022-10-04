@@ -165,7 +165,7 @@ include_once('_navbar/navbar.php');
                     <div class="col-md-7">
                         <div class="row d-flex justify-content-center text-center">
                             <div class="col-sm-4">
-                                <div class="custom-card taxons" data-taxon="Ambroisies">
+                                <div class="custom-card taxons" data-taxon="Ambroisie">
                                     <h4>AMBROISIES</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-icon">
