@@ -169,7 +169,7 @@ include_once('_navbar/navbar.php');
                                     <h4>AMBROISIES</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-icon">
-                                    <div id="p"></div>
+                                    <div id="p0"></div>
                                 </div>
                             </div>
 
