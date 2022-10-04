@@ -185,7 +185,7 @@ include_once('_navbar/navbar.php');
 
                             <div class="col-sm-4">
                                 <div class="custom-card taxons" data-taxon="Graminées">
-                                    <h4>GRAMINEES</h4>
+                                    <h4>GRAMINÉES</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-icon">
                                     <div id="p2"></div>
@@ -241,7 +241,7 @@ include_once('_navbar/navbar.php');
 
                             <div class="col-sm-4">
                                 <div class="custom-card taxons" data-taxon="Urticacées">
-                                    <h4>Urticacées</h4>
+                                    <h4>URTICACÉES</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
                                     <div id="p8"></div>
