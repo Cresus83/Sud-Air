@@ -100,15 +100,7 @@ async function getAirQuality(com, insee) {
   //* Stock les informations de la ville séléctionner dans un <input> puis les stockent dans une variable
   const input = document.getElementById("search");
   input.setAttribute("value", insee);
-  if (input.value.length == 4) {
-    insee = "0" + insee;
-    input.value = com.textContent;
-    console.log(insee);
-  } else {
-    console.log("insee a 5 chiffres");
-    input.value = com.textContent;
-  }
-
+  input.value = com.textContent;
   const searchThis = input.value;
 
   //* Affiche le nom de la commune sur la section "Qualité de l'air"
