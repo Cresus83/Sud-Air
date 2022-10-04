@@ -162,9 +162,9 @@ async function getPollens(com, insee) {
     zone = 3527;
   } else if (insee == 13055) {
     zone = 3529;
-  } else if (insee == "06088") {
+  } else if (insee == 6088) {
     zone = 3530;
-  } else if (insee == 05061) {
+  } else if (insee == 5061) {
     zone = 3528;
   } else if (insee == 83050) {
     zone = 4982;
