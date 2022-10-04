@@ -231,24 +231,23 @@ include_once('_navbar/navbar.php');
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card taxons" data-taxon="Urticacées">
-                                    <h4>Urticacées</h4>
-                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                         alt="pollen-Symbole">
-                                    <div id="p7"></div>
-
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
                                 <div class="custom-card taxons" data-taxon="Saule">
                                     <h4>SAULE</h4>
                                     <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
                                          alt="pollen-Symbole">
-                                    <div id="p8"></div>
+                                    <div id="p7"></div>
                                 </div>
                             </div>
 
-  
+                            <div class="col-sm-4">
+                                <div class="custom-card taxons" data-taxon="Urticacées">
+                                    <h4>Urticacées</h4>
+                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
+                                         alt="pollen-Symbole">
+                                    <div id="p8"></div>
+
+                                </div>
+                            </div>
 
                            
                         </div>
