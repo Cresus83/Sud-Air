@@ -61,6 +61,7 @@ include_once('_navbar/navbar.php');
             </div>
             <p>Powered by AtmoSud</p>
         </div>
+
         <div class="conseil-box">
             <button><img alt="lightbulb-conseil" src="assets/img/lightbulb.png">Nos conseils pour améliorer votre
                 bien-être et respirer un air meilleur.
