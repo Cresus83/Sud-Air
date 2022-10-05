@@ -226,11 +226,11 @@ function pollenData(pollendata) {
     }
 
     //* Vérification de la sortie de la fonction de comparaison
-    //* Si 'true' ajoute au sein du DOM le texte 'Présent'
+    //* Si 'true' ajoute au sein du DOM le texte 'Présence'
     if (findEqualDatas(taxonsarray, taxonstab) == true) {
       document.getElementById(
         "p" + i
-      ).innerHTML = `<h4 style='color:${couleurind};'>Présent</h4></div> `;
+      ).innerHTML = `<h4 style='color:${couleurind};'>Présence</h4></div> `;
     }
     //* Si 'false' ajoute au sein du DOM le texte 'Indisponible'
     else {
