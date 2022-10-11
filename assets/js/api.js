@@ -234,9 +234,7 @@ function pollenData(pollendata) {
     }
     //* Si 'false' ajoute au sein du DOM le texte 'Indisponible'
     else {
-      document.getElementById(
-        "p" + i
-      ).innerHTML = `<h4 style='color:white;background-color:#AE0F0F;'>Indisponible</h4></div>`;
+      taxons[i].style.display = "none";
     }
   }
   //* Affichage de l'indice général
