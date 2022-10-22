@@ -98,16 +98,6 @@ section {
     transform: translate(-50%, -50%);
 }
 
-#hero:before {
-    content: "";
-    background: rgba(0, 0, 0, 0.65);
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
 #hero .hero-container {
     position: absolute;
     bottom: 0;
@@ -123,9 +113,10 @@ section {
 
 #hero h1 {
     margin: 0 0 10px 0;
-    font-size: 64px;
+    font-size: 55px;
     font-family: "Satisfy", serif;
     color: #fff;
+    text-align: center;
 }
 
 #hero h2 {
@@ -196,7 +187,7 @@ section {
     display: flex;
     justify-content: right;
     color: #fff;
-    margin-top: 10px;
+    font-weight: 500;
 }
 
 ::selection {
@@ -205,7 +196,7 @@ section {
 }
 
 .wrapper {
-    max-width: 450px;
+    max-width: 415px;
     margin: 150px auto;
 }
 
