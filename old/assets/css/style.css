@@ -1,0 +1,604 @@
+/*###### IMPORTS ###### */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Satisfy");
+@import "_navbar.css";
+@import "_footer.css";
+/*----------------------*/
+
+/*############################ */
+/*###### STRUCTURE SITE ###### */
+/*############################ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #444444;
+}
+
+a {
+    color: #ffb727;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffc85a;
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.unselectable {
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+}
+
+/*--------------------------------------------------------------
+# Bouton retour en haut
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #ffb727;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+}
+
+.back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+}
+
+.back-to-top:hover {
+    background: #ffc550;
+    color: #fff;
+}
+
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+
+#hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#hero video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+}
+
+#hero:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.65);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#hero .hero-container {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+#hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 64px;
+    font-family: "Satisfy", serif;
+    color: #fff;
+}
+
+#hero h2 {
+    color: #eee;
+    margin-bottom: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#hero .btn-scroll {
+    transition: 0.4s;
+    color: rgba(255, 255, 255, 0.6);
+    animation: up-down 1s ease-in-out infinite alternate-reverse both;
+}
+
+#hero .btn-scroll i {
+    font-size: 48px;
+}
+
+#hero .btn-scroll:hover {
+    color: #ffb727;
+}
+
+@media (min-width: 1024px) {
+    #hero {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 575px) {
+    #hero h1 {
+        font-size: 40px;
+    }
+
+    #hero h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+@-webkit-keyframes up-down {
+    0% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+
+.section-bg {
+    background-color: white;
+}
+
+.section-title {
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    color: #3b434a;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title span {
+    position: absolute;
+    top: 30px;
+    color: #eef0f2;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 52px;
+    text-transform: uppercase;
+    line-height: 0;
+}
+
+.section-title p {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 575px) {
+    .section-title h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .section-title span {
+        font-size: 38px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+    padding: 20px 0;
+    background-color: #f4f5f6;
+    min-height: 40px;
+    margin-top: 78px;
+}
+
+@media (max-width: 992px) {
+    .breadcrumbs {
+        margin-top: 60px;
+    }
+}
+
+.breadcrumbs h2 {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .breadcrumbs h2 {
+        margin: 0 0 10px 0;
+    }
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.breadcrumbs ol li + li {
+    padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #6c757d;
+    content: "/";
+}
+
+@media (max-width: 768px) {
+    .breadcrumbs .d-flex {
+        display: block !important;
+    }
+
+    .breadcrumbs ol {
+        display: block;
+    }
+
+    .breadcrumbs ol li {
+        display: inline-block;
+    }
+}
+
+/*--------------------------------------------------------------
+# My Resume
+--------------------------------------------------------------*/
+.resume .resume-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #3b434a;
+}
+
+.resume .resume-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid #82909c;
+    position: relative;
+}
+
+.resume .resume-item h4 {
+    line-height: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffb727;
+    margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+    font-size: 16px;
+    background: #eef0f2;
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.resume .resume-item ul {
+    padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+    padding-bottom: 10px;
+}
+
+.resume .resume-item:last-child {
+    padding-bottom: 0;
+}
+
+.resume .resume-item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background: #fff;
+    border: 2px solid #82909c;
+}
+
+/*######################## */
+/*###### SEARCH BAR ###### */
+/*######################## */
+
+.wrapper p {
+    display: flex;
+    justify-content: right;
+    color: #fff;
+    margin-top: 10px;
+}
+
+::selection {
+    color: #fff;
+    background: #664aff;
+}
+
+.wrapper {
+    max-width: 450px;
+    margin: 150px auto;
+}
+
+.wrapper .search-input {
+    background: #fff;
+    width: 100%;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+ul {
+    padding-left: 0;
+}
+
+.search-input input {
+    height: 55px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 25px 25px 0 0;
+    padding: 0 170px 0 20px;
+    font-size: 18px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input.active input {
+    border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box {
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.search-input.active .autocom-box {
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.autocom-box li {
+    list-style: none;
+    padding: 8px 12px;
+    color: black;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+}
+
+.search-input.active .autocom-box li {
+    display: block;
+}
+
+.autocom-box li:hover {
+    background: #efefef;
+}
+
+.search-input .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    color: #644bff;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.liststyle {
+    list-style: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.liststyle:hover {
+    background-color: #664aff;
+    color: #fff;
+}
+
+.icons {
+    margin-right: 1rem;
+}
+
+/*######################### */
+/*###### CONSEIL BOX ###### */
+/*######################### */
+
+.conseil-box img {
+    width: 35px;
+    height: 35px;
+}
+
+.conseil-box button {
+    padding: 15px 40px;
+    background: #fff;
+    border-radius: 50px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 3px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+}
+
+.conseil-box button::after,
+.conseil-box button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.conseil-box button::after {
+    width: 30px;
+    height: 1px;
+    background: black;
+    transform: translateX(-3px);
+    margin-top: 0;
+}
+
+.conseil-box button::before {
+    content: "";
+    transform: rotate(-135deg) translateX(50%);
+    width: 11px;
+    height: 11px;
+    background: transparent;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-top: -1px;
+}
+
+.conseil-box button:hover {
+    padding: 15px 60px 15px 20px;
+}
+
+.conseil-box button:hover::after,
+.conseil-box button:hover::before {
+    opacity: 1;
+    right: 15px;
+}
+
+/*################################################ */
+/*###### WIDGET QUALITE AIR & POLLEN (CARD) ###### */
+/*################################################ */
+.custom-card {
+    border: 2px solid #212529;
+    border-radius: 0.375rem;
+    font-size: 23px;
+    padding: 10px 0 0 0;
+    margin: 10px 0 10px 0;
+}
+
+#pm10,
+#pm2,
+#ozone,
+#azote,
+#soufre,
+#p0,
+#p1,
+#p2,
+#p3,
+#p4,
+#p5,
+#p6,
+#p7,
+#p8 {
+    margin-top: 1rem;
+    border-top: 2px solid black;
+}
+
+h2,
+h4 {
+    margin-bottom: 0;
+}
+
+.general-pollen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    border: 7px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.circle,
+.indice-pollinique {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
