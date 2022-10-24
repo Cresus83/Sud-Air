@@ -111,9 +111,13 @@ section {
 
 .logo img {
     width: 40%;
-    height: 40%;
 }
-
+.logo-col {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -143,7 +147,7 @@ section {
     right: 0;
     z-index: 1;
     font-weight: 700;
-    font-size: 52px;
+    font-size: 42px;
     text-transform: uppercase;
     line-height: 0;
 }
@@ -202,9 +206,12 @@ section {
     font-weight: 500;
 }
 
-.wrapper {
-    max-width: 415px;
-    margin: 150px auto;
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper .search-input {
@@ -289,6 +296,13 @@ ul {
 /*###### CONSEIL BOX ###### */
 /*######################### */
 
+.conseil-box {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
 .conseil-box img {
     width: 35px;
     height: 35px;
@@ -350,4 +364,30 @@ ul {
 .conseil-box button:hover::before {
     opacity: 1;
     right: 15px;
+}
+
+
+/*######################## */
+/*###### RESPONSIVE ###### */
+/*######################## */
+
+
+
+@media (max-width: 768px) {
+    .title-city {
+        font-size: 23px;
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+    }
+    .page-centrale h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .page-centrale h2 {
+        text-align: center;
+    }
 }
