@@ -301,6 +301,7 @@ ul {
     align-content: center;
     align-items: center;
     justify-content: center;
+    height: 250px;
 }
 
 .conseil-box img {
@@ -371,8 +372,6 @@ ul {
 /*###### RESPONSIVE ###### */
 /*######################## */
 
-
-
 @media (max-width: 768px) {
     .title-city {
         font-size: 23px;
@@ -389,5 +388,11 @@ ul {
 @media (max-width: 575px) {
     .page-centrale h2 {
         text-align: center;
+    }
+    .logo img {
+        width: 55%;
+    }
+    #header h2 {
+        margin: 35px 0 35px 0;
     }
 }
