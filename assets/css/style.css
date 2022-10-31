@@ -367,6 +367,23 @@ ul {
     opacity: 1;
     right: 15px;
 }
+/*#################### */
+/*###### WIDGET ###### */
+/*#################### */
+
+.widgets {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.custom-card {
+    border: 2px solid #212529;
+    border-radius: 0.375rem;
+    font-size: 23px;
+    padding: 10px 0 0 0;
+    margin: 10px 0 10px 0;
+}
 /*######################## */
 /*###### RESPONSIVE ###### */
 /*######################## */
