@@ -298,11 +298,7 @@ ul {
 /*######################### */
 
 .conseil-box {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    height: 250px;
+    margin-top: 100px;
 }
 
 .conseil-box img {
@@ -314,6 +310,7 @@ ul {
     padding: 15px 40px;
     background: #fff;
     border-radius: 50px;
+    border: 2px solid black;
     color: #000;
     text-transform: uppercase;
     font-size: 15px;
@@ -325,7 +322,8 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .conseil-box button::after,
@@ -367,22 +365,62 @@ ul {
     opacity: 1;
     right: 15px;
 }
-/*#################### */
-/*###### WIDGET ###### */
-/*#################### */
+/*################################ */
+/*###### WIDGET AIR QUALITY ###### */
+/*################################ */
 
 .widgets {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding: 20px ;
 }
 
-.custom-card {
+.custom-card-air-quality {
     border: 2px solid #212529;
     border-radius: 0.375rem;
     font-size: 23px;
-    padding: 10px 0 0 0;
     margin: 10px 0 10px 0;
+    transition: transform 300ms ease-in-out;
+    padding: 0 5px 0 5px;
+}
+.custom-card-air-quality p{
+    margin-bottom: 0;
+    font-size: 20px;
+    text-align: center;
+}
+.custom-card-air-quality:hover{
+    transform: translateY(-5px);
+    border: 2px solid #f9b233;
+}
+
+.custom-card-air-quality-result {
+    font-size: 23px;
+    padding: 0 50px 0 50px;
+    transition: transform 300ms ease-in-out;
+    border-top: 2px solid black;
+}
+
+.tooltip {
+    opacity: 1;
+    display: unset;
+}
+/*################################ */
+/*###### WIDGET AIR QUALITY ###### */
+/*################################ */
+
+.custom-card-pollen {
+    border: 2px solid #212529;
+    border-radius: 0.375rem;
+    font-size: 23px;
+    margin: 10px 0 10px 0;
+    padding: 10px 0 0 0;
+    transition: transform 300ms ease-in-out;
+
+}
+
+.custom-card-pollen:hover{
+    transform: translateY(-15px);
 }
 /*######################## */
 /*###### RESPONSIVE ###### */
@@ -399,6 +437,9 @@ ul {
     .page-centrale h2 {
         text-align: center;
     }
+    .widgets {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 575px) {
@@ -411,4 +452,68 @@ ul {
     #header h2 {
         margin: 35px 0 35px 0;
     }
+}
+
+.popup-ui {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 7777;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+.popup-ui:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.popup-ui .popup-ui-wrapper {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    text-align: left;
+}
+.popup-ui .popup-ui-wrapper .popup-ui-content {
+    position: relative;
+    background: #FFF;
+    padding: 0;
+    width: auto;
+    margin: 0 auto;
+    opacity: 0;
+    visibility: hidden;
+    border: solid 5px #FFF;
+    max-width: 500px;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.8);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+.popup-ui.show {
+    opacity: 1;
+    visibility: visible;
+}
+.popup-ui.show .popup-ui-content {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.my-content img {
+    max-width: 100%;
+    height: auto;
+}
+.my-content h3 {
+    padding: 0 10px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.my-content p {
+    padding: 0 10px;
+    font-size: 0.9em;
 }
