@@ -128,30 +128,104 @@
                     </div>
                 </div>
             </div>
+            <!-- ======= Bouton conseil ======= -->
             <div class="conseil-box">
-                <button id="btnpopup"><img alt="lightbulb-conseil" src="assets/img/lightbulb.png">Découvrez nos conseils pour vous
+                <button class="toggle" data-target="myPopup"><img alt="lightbulb-conseil"
+                                                                  src="assets/img/lightbulb.png">Découvrez nos conseils
+                    pour vous
                     protéger de la pollution de l’air à&nbsp;<span id="citysearch2"></span>.
                 </button>
             </div>
 
-            <div id="mypopup" class="popup-ui">
-                <div class="popup-ui-wrapper">
-                    <div class="popup-ui-content">
+            <!-- ======= Popup Conseil ======= -->
+            <div id="myPopup" class="popup hide">
+                <div class="popup-header">
+                    <h2>Voyons les gestes simples à adopter pour se protéger de la pollution de l’air.</h2>
+                    <span class="close toggle" data-target="myPopup">close</span>
+                </div>
+                <div class="popup-body">
 
-                        <!-- Your content -->
-                        <div class="my-content">
-                            <img src="https://farm3.staticflickr.com/2910/14613121764_d812eb0731.jpg" alt="">
-
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing.</h3>
-                            <p>
-                                In enim lacus, pellentesque a viverra scelerisque, dapibus sit amet ipsum. Donec pharetra mauris in turpis placerat pellentesque. Integer vitae tellus mauris. Sed lobortis varius erat, sed ullamcorper tellus hendrerit a.
-                            </p>
+                    <!-- ======= Qualité de l'air dégradé ======= -->
+                    <!-- <div id="air-degrade" style="display: none"> ======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
+                        <h3 style="color: red" class="title-conseil">Qualité de l'air dégradé</h3>
+                        <div class="conseil-div">
+                            <div class="conseil">
+                                <img alt="icone_fenetres-fermees" style="padding-right: 10px"
+                                     src="assets/img/icones/rouge/fenêtre.svg">
+                                <p>Fermez vos fenêtres pour empêcher à l'air pollué de rentrer.</p>
+                            </div>
+                            <div class="conseil">
+                                <img alt="icone_purificateur_air" style="padding-right: 10px"
+                                     src="assets/img/icones/rouge/purificateur-air.svg">
+                                <p>L'usage d'un purificateur d'air est particulièrement recommandé.</p>
+                            </div>
                         </div>
-                        <!-- // Your content -->
+                        <div class="conseil-div">
+                            <div class="conseil">
+                                <img alt="icone_activites" style="padding-right: 10px"
+                                     src="assets/img/icones/rouge/sport.svg">
+                                <p>Évitez impérativement les activités de plein air.</p>
+                            </div>
+                            <div class="conseil">
+                                <img alt="icone_port_du_masque" style="padding-right: 10px"
+                                     src="assets/img/icones/rouge/port-du-masque.svg">
+                                <p>Le port du masque est fortement recommandé pour les personnes à risque.</p>
+                            </div>
+                        </div>
+                    </div>
+            <!--</div> -->
 
+            <!-- ======= Qualité de l'air moyenne ======= -->
+            <div id="air-moyen" style="display: none"><!--  ======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
+                <h3 style="color: orange" class="title-conseil">Qualité de l'air moyenne</h3>
+                <div class="conseil-div">
+                    <div class="conseil">
+                        <img alt="icone_fenetres-fermees" style="padding-right: 10px"
+                             src="assets/img/icones/orange/fenêtre.svg">
+                        <p>Fermez vos fenêtres pour empêcher à l'air pollué de rentrer.</p>
+                    </div>
+                    <div class="conseil">
+                        <img alt="icone_purificateur_air" style="padding-right: 10px"
+                             src="assets/img/icones/orange/purificateur-air.svg">
+                        <p>L'usage d'un purificateur d'air est recommandé.</p>
+                    </div>
+                </div>
+                <div class="conseil-div">
+                    <div class="conseil">
+                        <img alt="icone_activites" style="padding-right: 10px"
+                             src="assets/img/icones/orange/sport.svg">
+                        <p>Évitez les activités de plein air.</p>
+                    </div>
+                    <div class="conseil">
+                        <img alt="icone_port_du_masque" style="padding-right: 10px"
+                             src="assets/img/icones/orange/port-du-masque.svg">
+                        <p>Le port du masque est recommandé pour les personnes à risque.</p>
                     </div>
                 </div>
             </div>
+
+            <!-- ======= Qualité de l'air bonne ======= -->
+            <div id="air-bon" style="display: none"> <!--======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
+                <h3 style="color: green" class="title-conseil">Qualité de l'air bonne</h3>
+                <div class="conseil-div">
+                    <div class="conseil">
+                        <img alt="icone_fenetres-fermees" style="padding-right: 10px"
+                             src="assets/img/icones/vert/fenêtre.svg">
+                        <p>Ouvrez vos fenêtres pour renouveller l'air pollué par de l'air pur et frais à
+                            l'intérieur.</p>
+                    </div>
+                    <div class="conseil">
+                        <img alt="icone_purificateur_air" style="padding-right: 10px"
+                             src="assets/img/icones/vert/sport.svg">
+                        <p>Profitez des activités de plein air.</p>
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <button class="toggle button-understand" data-target="myPopup">J'AI COMPRIS !</button>
+                </div>
+            </div>
+        </div>
+        </div>
     </section>
 
     <!-- ======= Section Risques Polliniques ======= -->
@@ -299,8 +373,8 @@
 <script src="https://kit.fontawesome.com/b5858ea88a.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
         crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/2.5.3/tippy.all.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
 
 <!-- Template Main JS File -->
 <script src="assets/app/api.js"></script>
