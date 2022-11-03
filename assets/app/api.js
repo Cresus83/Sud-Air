@@ -230,7 +230,7 @@ function pollenData(pollendata) {
     if (findEqualDatas(taxonsarray, taxonstab) == true) {
       document.getElementById(
         "p" + i
-      ).innerHTML = `<h4 style='color:${couleurind};'>Présence</h4></div> `;
+      )//.innerHTML = `<h4 style='color:${couleurind};'>Présence</h4></div> `;
     }
     //* Si 'false' ajoute au sein du DOM le texte 'Indisponible'
     else {

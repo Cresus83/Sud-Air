@@ -169,6 +169,7 @@ section {
         font-size: 35px;
     }
 }
+
 /*--------------------------------------------------------------
 # Bouton retour en haut
 --------------------------------------------------------------*/
@@ -408,30 +409,12 @@ ul {
     font-size: 23px;
     padding: 0 50px 0 50px;
     transition: transform 300ms ease-in-out;
-    border-top: 2px solid black;
+    border-top: 1px solid black;
 }
 
 .tooltip {
     opacity: 1;
     display: unset;
-}
-
-/*################################ */
-/*###### WIDGET AIR QUALITY ###### */
-/*################################ */
-
-.custom-card-pollen {
-    border: 2px solid #212529;
-    border-radius: 0.375rem;
-    font-size: 23px;
-    margin: 10px 0 10px 0;
-    padding: 10px 0 0 0;
-    transition: transform 300ms ease-in-out;
-
-}
-
-.custom-card-pollen:hover {
-    transform: translateY(-15px);
 }
 
 /*############################ */
@@ -488,7 +471,7 @@ ul {
 
 .popup {
     position: absolute;
-    top: 50%;
+    top: 58%;
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
@@ -506,7 +489,7 @@ ul {
     -o-transition: all 120ms;
     transition: all 120ms;
     z-index: 10000;
-    padding: 25px;
+    padding: 20px;
     color: #5E5E5E;
 }
 
@@ -526,7 +509,6 @@ ul {
     align-content: center;
     align-items: center;
 }
-
 
 .conseil {
     width: 50%;
@@ -552,17 +534,104 @@ ul {
     border-radius: 20px;
     display: flex;
     margin: 25px auto 0;
-    width: 25%;
+    width: 222px;
     height: 38px;
     justify-content: center;
     transition: all 0.2s;
     align-items: center;
 }
+
 .button-understand:hover {
     border: 2px solid #0a53be;
     background-color: #0a53be;
     color: #fff;
     transition: all 0.2s;
+}
+
+/*########################### */
+/*###### WIDGET POLLEN ###### */
+/*########################### */
+
+.pollen-global {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.pollen-moyennne {
+    width: 50%;
+    display: flex;
+}
+
+.pollen-plantes {
+    width: 50%;
+    display: flex;
+}
+
+.title-pollen {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.custom-card-pollen {
+    transition: transform 300ms ease-in-out;
+    border: 2px solid #212529;
+    border-radius: 0.375rem;
+    padding: 30px 0 20px 0;
+    margin: 20px 0px 0px 0px;
+}
+
+.custom-card-pollen:hover {
+    transform: translateY(-5px);
+    border: 2px solid #f9b233;
+}
+
+#ambroisies {
+    background: url("../img/plantes/ambroisies.png") no-repeat;
+    background-size: cover;
+}
+
+#armoises {
+    background: url("../img/plantes/armoises.png") no-repeat;
+    background-size: cover;
+}
+
+#graminées {
+    background: url("../img/plantes/graminées.png") no-repeat;
+    background-size: cover;
+}
+
+#oseilles {
+    background: url("../img/plantes/oseilles.png") no-repeat;
+    background-size: cover;
+}
+
+#peuplier {
+    background: url("../img/plantes/peuplier.png") no-repeat;
+    background-size: cover;
+}
+
+#plantain {
+    background: url("../img/plantes/plantain.png") no-repeat;
+    background-size: cover;
+}
+
+#platane {
+    background: url("../img/plantes/platane.png") no-repeat;
+    background-size: cover;
+}
+
+#saule {
+    background: url("../img/plantes/saule.png") no-repeat;
+    background-size: cover;
+}
+
+#urticacées {
+    background: url("../img/plantes/urticacées.png") no-repeat;
+    background-size: cover;
 }
 
 
@@ -605,7 +674,13 @@ ul {
 
 @media screen and (max-width: 1000px) {
     .popup {
-        width: 95%;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 50%;
     }
 
     .popup-header {
@@ -622,6 +697,7 @@ ul {
     .conseil-div {
         flex-direction: column;
     }
+
     .conseil {
         width: 100%;
         margin-top: 30px;

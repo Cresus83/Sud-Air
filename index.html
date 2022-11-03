@@ -130,18 +130,19 @@
             </div>
             <!-- ======= Bouton conseil ======= -->
             <div class="conseil-box">
-                <button class="toggle" data-target="myPopup"><img alt="lightbulb-conseil"
-                                                                  src="assets/img/lightbulb.png">Découvrez nos conseils
+                <button class="toggle" data-target="popup-conseil"><img alt="lightbulb-conseil"
+                                                                        src="assets/img/lightbulb.png">Découvrez nos
+                    conseils
                     pour vous
                     protéger de la pollution de l’air à&nbsp;<span id="citysearch2"></span>.
                 </button>
             </div>
 
             <!-- ======= Popup Conseil ======= -->
-            <div id="myPopup" class="popup hide">
+            <div id="popup-conseil" class="popup hide">
                 <div class="popup-header">
                     <h2>Voyons les gestes simples à adopter pour se protéger de la pollution de l’air.</h2>
-                    <span class="close toggle" data-target="myPopup">close</span>
+                    <span class="close toggle" data-target="popup-conseil">close</span>
                 </div>
                 <div class="popup-body">
 
@@ -176,7 +177,8 @@
                 <!--</div> -->
 
                 <!-- ======= Qualité de l'air moyenne ======= -->
-                <div id="air-moyen" style="display: none"><!--  ======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
+                <div id="air-moyen" style="display: none">
+                    <!--  ======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
                     <h3 style="color: orange" class="title-conseil">Qualité de l'air moyenne</h3>
                     <div class="conseil-div">
                         <div class="conseil">
@@ -205,7 +207,8 @@
                 </div>
 
                 <!-- ======= Qualité de l'air bonne ======= -->
-                <div id="air-bon" style="display: none"><!--======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
+                <div id="air-bon" style="display: none">
+                    <!--======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
                     <h3 style="color: green" class="title-conseil">Qualité de l'air bonne</h3>
                     <div class="conseil-div">
                         <div class="conseil">
@@ -222,7 +225,7 @@
                     </div>
                 </div>
                 <div class="popup-footer">
-                    <button class="toggle button-understand" data-target="myPopup">J'AI COMPRIS !</button>
+                    <button class="toggle button-understand" data-target="popup-conseil">J'AI COMPRIS !</button>
                 </div>
             </div>
         </div>
@@ -256,99 +259,71 @@
                     <div class="col-md-7">
                         <div class="row d-flex justify-content-center text-center float-left">
                             <div class="col-sm-4">
-                                <div class="custom-card-pollen taxons" data-taxon="Ambroisie">
-                                    <h4>AMBROISIES</h4>
-                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                         alt="pollen-icon">
+                                <div id="ambroisies" class="custom-card-pollen taxons" data-taxon="Ambroisie">
+                                    <h4 class="title-pollen">AMBROISIES</h4>
                                     <div id="p0"></div>
                                 </div>
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card-pollen taxons" data-taxon="Armoise">
-                                    <h4>ARMOISES</h4>
-                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                         alt="pollen-Symbole">
+                                <div id="armoises" class="custom-card-pollen taxons" data-taxon="Armoise">
+                                    <h4 class="title-pollen">ARMOISES</h4>
                                     <div id="p1"></div>
 
                                 </div>
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card-pollen taxons" data-taxon="Graminées">
-                                    <h4>GRAMINÉES</h4>
-                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                         alt="pollen-icon">
+                                <div id="graminées" class="custom-card-pollen taxons" data-taxon="Graminées">
+                                    <h4 class="title-pollen">GRAMINÉES</h4>
                                     <div id="p2"></div>
                                 </div>
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card-pollen taxons" data-taxon="Oseille">
-                                    <h4>OSEILLES</h4>
-                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                         alt="pollen-Symbole">
+                                <div id="oseilles" class="custom-card-pollen taxons" data-taxon="Oseille">
+                                    <h4 class="title-pollen">OSEILLES</h4>
                                     <div id="p3"></div>
-
                                 </div>
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card-pollen taxons" data-taxon="Peuplier">
-                                    <h4>PEUPLIER</h4>
-                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                         alt="pollen-Symbole">
+                                <div id="peuplier" class="custom-card-pollen taxons" data-taxon="Peuplier">
+                                    <h4 class="title-pollen">PEUPLIER</h4>
                                     <div id="p4"></div>
                                 </div>
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card-pollen taxons" data-taxon="Plantain">
-                                    <h4>PLANTAIN</h4>
-                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                         alt="pollen-Symbole">
+                                <div id="plantain" class="custom-card-pollen taxons" data-taxon="Plantain">
+                                    <h4 class="title-pollen">PLANTAIN</h4>
                                     <div id="p5"></div>
-
                                 </div>
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card-pollen taxons" data-taxon="Platane">
-                                    <h4>PLATANE</h4>
-                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                         alt="pollen-Symbole">
+                                <div id="platane" class="custom-card-pollen taxons" data-taxon="Platane">
+                                    <h4 class="title-pollen">PLATANE</h4>
                                     <div id="p6"></div>
                                 </div>
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card-pollen taxons" data-taxon="Saule">
-                                    <h4>SAULE</h4>
-                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                         alt="pollen-Symbole">
+                                <div id="saule" class="custom-card-pollen taxons" data-taxon="Saule">
+                                    <h4 class="title-pollen">SAULE</h4>
                                     <div id="p7"></div>
                                 </div>
                             </div>
 
                             <div class="col-sm-4">
-                                <div class="custom-card-pollen taxons" data-taxon="Urticacées">
-                                    <h4>URTICACÉES</h4>
-                                    <img style="width: 100px;height: 100px" src="assets/img/pollen.png"
-                                         alt="pollen-Symbole">
+                                <div id="urticacées" class="custom-card-pollen taxons" data-taxon="Urticacées">
+                                    <h4 class="title-pollen">URTICACÉES</h4>
                                     <div id="p8"></div>
-
                                 </div>
                             </div>
 
-
                         </div>
                     </div>
-                </div>
-            </div>
-
-
-            <div class="container">
-                <div class="row">
                 </div>
             </div>
         </div>
@@ -371,7 +346,8 @@
 <!-- Vendor JS Files -->
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/b5858ea88a.js" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/2.5.3/tippy.all.min.js"></script>
 
 <!-- Template Main JS File -->
