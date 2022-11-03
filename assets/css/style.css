@@ -589,47 +589,47 @@ ul {
     border: 2px solid #f9b233;
 }
 
-#ambroisies {
+#p0 {
     background: url("../img/plantes/ambroisies.png") no-repeat;
     background-size: cover;
 }
 
-#armoises {
+#p1 {
     background: url("../img/plantes/armoises.png") no-repeat;
     background-size: cover;
 }
 
-#graminées {
+#p2 {
     background: url("../img/plantes/graminées.png") no-repeat;
     background-size: cover;
 }
 
-#oseilles {
+#p3 {
     background: url("../img/plantes/oseilles.png") no-repeat;
     background-size: cover;
 }
 
-#peuplier {
+#p4 {
     background: url("../img/plantes/peuplier.png") no-repeat;
     background-size: cover;
 }
 
-#plantain {
+#p5 {
     background: url("../img/plantes/plantain.png") no-repeat;
     background-size: cover;
 }
 
-#platane {
+#p6 {
     background: url("../img/plantes/platane.png") no-repeat;
     background-size: cover;
 }
 
-#saule {
+#p7 {
     background: url("../img/plantes/saule.png") no-repeat;
     background-size: cover;
 }
 
-#urticacées {
+#p8 {
     background: url("../img/plantes/urticacées.png") no-repeat;
     background-size: cover;
 }
