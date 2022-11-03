@@ -551,21 +551,13 @@ ul {
 /*########################### */
 /*###### WIDGET POLLEN ###### */
 /*########################### */
-
-.pollen-global {
+.pollen-moyenne {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    align-items: center;
 }
 
-.pollen-moyennne {
-    width: 50%;
-    display: flex;
-}
-
-.pollen-plantes {
-    width: 50%;
-    display: flex;
+.Airdata {
+    text-align: center;
 }
 
 .title-pollen {
@@ -655,6 +647,9 @@ ul {
 
     .widgets {
         flex-direction: column;
+    }
+    .pollen-moyenne {
+        margin-bottom: 30px;
     }
 }
 
