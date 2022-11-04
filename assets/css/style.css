@@ -32,53 +32,80 @@ section {
   background: #f9b233;
 }
 
+.unselectable {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
-#preloader {
-  position: fixed;
+.loader-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  overflow: hidden;
-  background: #fff;
+  left: 0px;
+  background-color: #00305c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000000;
 }
-
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #106eea;
-  border-top-color: #e2eefd;
-  border-radius: 50%;
+.loader {
+  display: inline-block;
   width: 60px;
   height: 60px;
-  -webkit-animation: animate-preloader 1s linear infinite;
-  animation: animate-preloader 1s linear infinite;
+  position: relative;
+  border: 4px solid #f9b233;
+  animation: loader 2s infinite ease;
+}
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #f9b233;
+  animation: loader-inner 2s infinite ease-in;
 }
 
-@-webkit-keyframes animate-preloader {
+@keyframes loader {
   0% {
     transform: rotate(0deg);
   }
-
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
   100% {
     transform: rotate(360deg);
   }
 }
 
-@keyframes animate-preloader {
+@keyframes loader-inner {
   0% {
-    transform: rotate(0deg);
+    height: 0%;
   }
-
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
   100% {
-    transform: rotate(360deg);
+    height: 0%;
   }
 }
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -226,7 +253,7 @@ section {
   opacity: 0;
   right: 15px;
   bottom: 15px;
-  z-index: 996;
+  z-index: 1080;
   background: #ffb727;
   width: 40px;
   height: 40px;
@@ -347,7 +374,6 @@ ul {
 .icons {
   margin-right: 1rem;
 }
-
 /*######################### */
 /*###### CONSEIL BOX ###### */
 /*######################### */
@@ -686,10 +712,22 @@ ul {
 
 .anim {
   clip-path: inset(2px 2px);
+  display: flex;
+  margin: auto;
 }
+
+
 /*############################# */
 /*###### RESPONSIVE SITE ###### */
 /*############################# */
+@media screen and (max-width: 992px) {
+  .anim {
+    width: 80%;
+  }
+  .general h4 {
+    font-size: 18px;
+  }
+}
 
 @media (max-width: 768px) {
   .title-city {
@@ -762,69 +800,5 @@ ul {
 @media screen and (max-width: 487px) {
   .popup-header h2 {
     font-size: 18px;
-  }
-}
-
-.loader-wrapper {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0px;
-  background-color: #00305c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000000;
-}
-.loader {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  position: relative;
-  border: 4px solid #f9b233;
-  animation: loader 2s infinite ease;
-}
-.loader-inner {
-  vertical-align: top;
-  display: inline-block;
-  width: 100%;
-  background-color: #f9b233;
-  animation: loader-inner 2s infinite ease-in;
-}
-
-@keyframes loader {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(180deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  75% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes loader-inner {
-  0% {
-    height: 0%;
-  }
-  25% {
-    height: 0%;
-  }
-  50% {
-    height: 100%;
-  }
-  75% {
-    height: 100%;
-  }
-  100% {
-    height: 0%;
   }
 }

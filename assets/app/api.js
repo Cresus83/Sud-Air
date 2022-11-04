@@ -145,10 +145,10 @@ async function getAirQuality(com, insee) {
       break;
   }
 
-  const animCode = `<video class="anim" autoplay muted width="500">
+  const animCode = `<video class="anim" playsinline autoplay preload>
 
-  <source  src="assets/anim/Animation.webm#t=${timecode}"
-          type="video/webm">
+  <source src="assets/anim/Animation.mp4#t=${timecode}"
+          type="video/mp4">
 
 </video>`;
 
