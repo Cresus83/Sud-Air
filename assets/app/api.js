@@ -3,7 +3,7 @@
 var current_date = new Date().toLocaleDateString("en-CA");
 var tomorrow = new Date(Date.now() + 3600 * 1000 * 24); // + 1 day in ms
 var tomorrow_date = tomorrow.toLocaleDateString("en-CA");
-
+document.body.style.overflowY = "hidden";
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
 async function getVilles() {
@@ -20,7 +20,6 @@ getVilles().then(
 
     inputcities.addEventListener("input", (e) => {
       let value = e.target.value;
-      console.log(value);
 
       if (value && value.trim().length > 0) {
         value = value.trim().toUpperCase();
@@ -65,6 +64,7 @@ function clearData() {
 //* Slide vers le bas de 900px et appel la function dataSelected
 function slide() {
   window.scrollTo(0, 900);
+  document.body.style.overflowY = "scroll";
 }
 
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
