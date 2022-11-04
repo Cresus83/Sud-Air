@@ -1,34 +1,8 @@
-var date = new Date();
-//* Récupération de la date + Ajout de 1 zéro si le jour est inférieur a 10
-if (date.getDate() < 10) {
-  var current_date =
-    date.getFullYear() +
-    "-" +
-    ("0" + (date.getMonth() + 1)).slice(-2) +
-    "-" +
-    ("0" + date.getDate());
-  var tomorrow_date =
-    date.getFullYear() +
-    "-" +
-    ("0" + (date.getMonth() + 1)).slice(-2) +
-    "-" +
-    ("0" + (date.getDate() + 1));
-}
-//* Récupération de la date sans ajout de 0
-else {
-  var current_date =
-    date.getFullYear() +
-    "-" +
-    ("0" + (date.getMonth() + 1)).slice(-2) +
-    "-" +
-    date.getDate();
-  var tomorrow_date =
-    date.getFullYear() +
-    "-" +
-    ("0" + (date.getMonth() + 1)).slice(-2) +
-    "-" +
-    (date.getDate() + 1);
-}
+//* Récupération de la date
+
+var current_date = new Date().toLocaleDateString("en-CA");
+var tomorrow = new Date(Date.now() + 3600 * 1000 * 24); // + 1 day in ms
+var tomorrow_date = tomorrow.toLocaleDateString("en-CA");
 
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
@@ -85,7 +59,6 @@ communeselect.addEventListener("click", slide);
 
 //* Vide les datas recherchées
 function clearData() {
-  console.clear();
   listsearchbar.innerHTML = "";
 }
 
@@ -127,6 +100,59 @@ async function getAirQuality(com, insee) {
     `https://api.atmosud.org/iqa2021/commune/bulletin/journalier?&indice=all&dates_echeances=${current_date},${tomorrow_date}&${params}`
   );
   let airdata = await response.json();
+  //* Permet de stocker la qualité général de l'air
+  const airGen = JSON.stringify(
+    airdata[0].bulletins[0].valeurs[0].indice.qualificatif
+  );
+
+  const airColor = JSON.stringify(
+    airdata[0].bulletins[0].valeurs[0].indice.couleur
+  );
+
+  const airColStr = JSON.parse(airColor);
+  const airGenStr = JSON.parse(airGen);
+
+  //* Actualisation et assignations des bons conseils/timecode en fonction de la qualité de l'air
+  switch (airGenStr) {
+    case "Bon":
+      var timecode = "0,0.65";
+      document.getElementById("air-bon").style.display = "block";
+      break;
+
+    case "Moyen":
+      var timecode = "0,1.50";
+      document.getElementById("air-bon").style.display = "block";
+      break;
+
+    case "Dégradé":
+      var timecode = "0,2";
+      document.getElementById("air-moyen").style.display = "block";
+      break;
+
+    case "Mauvais":
+      var timecode = "0,3.10";
+      document.getElementById("air-moyen").style.display = "block";
+      break;
+
+    case "Trés mauvais":
+      var timecode = "0,3.80";
+      document.getElementById("air-moyen").style.display = "block";
+      break;
+
+    case "Extrêmement mauvais":
+      var timecode = "0,4.60";
+      document.getElementById("air-degrade").style.display = "block";
+      break;
+  }
+
+  const animCode = `<video class="anim" autoplay muted width="500">
+
+  <source  src="assets/anim/Animation.webm#t=${timecode}"
+          type="video/webm">
+
+</video>`;
+
+  document.getElementById("anim").innerHTML = animCode;
 
   document.getElementById(
     "pm10"
@@ -150,9 +176,8 @@ async function getAirQuality(com, insee) {
 
   document.getElementById(
     "general"
-  ).innerHTML = `<h3 style='color:${airdata[0].bulletins[0].valeurs[0].indice.couleur};'> ${airdata[0].bulletins[0].valeurs[0].indice.qualificatif}</h3><br> `;
+  ).innerHTML = `<h3 style='color:${airColStr};'> ${airGenStr}</h3><br> `;
 
-  console.log(airdata);
   return airdata;
 }
 
@@ -165,52 +190,56 @@ async function getPollens(com, insee) {
   input.value = com.textContent;
   const searchThis = input.value;
   console.log(searchThis);
+  let inseestr = JSON.stringify(insee);
 
-  if (insee == 83137) {
-    zone = 3531;
-  } else if (insee == 13001) {
-    zone = 3526;
-  } else if (insee == 84007) {
-    zone = 3527;
-  } else if (insee == 13055) {
-    zone = 3529;
-  } else if (insee == 6088) {
-    zone = 3530;
-  } else if (insee == 5061) {
-    zone = 3528;
-  } else if (insee == 83050) {
-    zone = 4982;
+  if (inseestr.length == 4) {
+    params = insee2;
+  } else {
+    params = insee;
   }
 
   //* Affiche le nom de la commune sur la section "Qualité de l'air"
   let citySelected = document.getElementById("citysearch2");
   citySelected.innerHTML = searchThis;
 
-  //* Crée la variable permettant d'attribuer le code insee dans l'url fetch
-  const params = `zones/${zone}`;
-
   //* Fetch de l'url visée
-  const response = await fetch(`https://api.atmosud.org/pollens/${params}`);
+  const response = await fetch(
+    `https://api.atmosud.org/siam/v1/communes/${params}`
+  );
   let pollendata = await response.json();
   pollenData(pollendata);
+  console.log(pollendata);
   return pollendata;
 }
+
 //* Fonction permettant de filtrer et afficher les données du pollen
 function pollenData(pollendata) {
   //* Récupération de la couleur de l'indice général
-  couleur = pollendata.data[0].zones[0].indice;
+  couleur = pollendata.data.pollens.indice_pollen;
   if (couleur == 1) {
     couleurind = "#377D22";
   } else if (couleur == 2) {
     couleurind = "#FFA800";
   } else if (couleur == 3) {
     couleurind = "#AE0F0F";
+  } else if (couleur == 0) {
+    couleurind = "#ffffff";
   }
 
-  //* Création d'un tableau pour lister les taxons détéctées par la station
-  const taxonstab = new Array(
-    JSON.stringify(pollendata.data[0].zones[0].taxons)
-  );
+  const taxonstabl = Array(pollendata.data.pollens.taxons);
+
+  const pollentab = new Array();
+
+  for (let b = 0; b < taxonstabl[0].length; b++) {
+    const indicestab = new Array(
+      JSON.stringify(pollendata.data.pollens.taxons[b].indice)
+    );
+
+    if (indicestab == "1") {
+      let pollstr = JSON.stringify(pollendata.data.pollens.taxons[b].label);
+      pollentab.push(JSON.parse(pollstr));
+    }
+  }
 
   //* Liste les div portant la classe '.taxons'
   const taxons = document.querySelectorAll(".taxons");
@@ -221,18 +250,15 @@ function pollenData(pollendata) {
     var taxonsarray = Array(taxons[i].dataset["taxon"]);
 
     //* Fonction permettant la comparaison des 2 tableaux
-    function findEqualDatas(taxonsarray, taxonstab) {
-      return taxonsarray.some((item) => taxonstab[0].includes(item));
+    function findEqualDatas(taxonsarray, pollentab) {
+      return taxonsarray.some((item) => pollentab.includes(item));
     }
 
     //* Vérification de la sortie de la fonction de comparaison
-    //* Si 'true' ajoute au sein du DOM le texte 'Présence'
-    if (findEqualDatas(taxonsarray, taxonstab) == true) {
-      document.getElementById(
-        "p" + i
-      )//.innerHTML = `<h4 style='color:${couleurind};'>Présence</h4></div> `;
+    //* Si 'true' ne fais rien
+    if (findEqualDatas(taxonsarray, pollentab) == true) {
     }
-    //* Si 'false' ajoute au sein du DOM le texte 'Indisponible'
+    //* Si 'false' cache la carte spécifique
     else {
       taxons[i].style.display = "none";
     }
@@ -240,5 +266,5 @@ function pollenData(pollendata) {
   //* Affichage de l'indice général
   document.getElementById(
     "generalpollen"
-  ).innerHTML = `<h2 style='color:${couleurind};'> ${pollendata.data[0].zones[0].indice}</h2><br> `;
+  ).innerHTML = `<h2 style='color:${couleurind};'> ${pollendata.data.pollens.indice_pollen}</h2><br> `;
 }
