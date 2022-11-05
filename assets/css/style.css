@@ -451,6 +451,10 @@ ul {
 /*###### WIDGET AIR QUALITY ###### */
 /*################################ */
 
+.Airdata {
+  text-align: center;
+}
+
 .widgets {
   display: flex;
   flex-direction: row;
@@ -545,7 +549,7 @@ ul {
 
 .popup {
   position: absolute;
-  top: 58%;
+  top: 68%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
@@ -625,13 +629,25 @@ ul {
 /*########################### */
 /*###### WIDGET POLLEN ###### */
 /*########################### */
-.pollen-moyenne {
+
+.indice-pollinique {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
-.Airdata {
-  text-align: center;
+.circle {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  border: 7px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  position: absolute;
 }
 
 .title-pollen {
@@ -800,5 +816,9 @@ ul {
 @media screen and (max-width: 487px) {
   .popup-header h2 {
     font-size: 18px;
+  }
+  .circle {
+    width: 45px;
+    height: 45px;
   }
 }
