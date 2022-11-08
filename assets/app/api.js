@@ -134,7 +134,7 @@ async function getAirQuality(com, insee) {
       document.getElementById("air-moyen").style.display = "block";
       break;
 
-    case "Trés mauvais":
+    case "Très mauvais":
       var timecode = "0,3.80";
       document.getElementById("air-moyen").style.display = "block";
       break;

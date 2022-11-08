@@ -730,6 +730,7 @@ ul {
   clip-path: inset(2px 2px);
   display: flex;
   margin: auto;
+  width: 50%;
 }
 
 
@@ -738,7 +739,7 @@ ul {
 /*############################# */
 @media screen and (max-width: 992px) {
   .anim {
-    width: 80%;
+    width: 90%;
   }
   .general h4 {
     font-size: 18px;
