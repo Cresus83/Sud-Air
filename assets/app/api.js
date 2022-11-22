@@ -1,5 +1,15 @@
 //* Récupération de la date
 
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
+
+const loader = document.getElementById("loader");
+
+function toggleLoader() {
+  loader.classList.toggle("d-flex");
+}
+
 var current_date = new Date().toLocaleDateString("en-CA");
 var tomorrow = new Date(Date.now() + 3600 * 1000 * 24); // + 1 day in ms
 var tomorrow_date = tomorrow.toLocaleDateString("en-CA");
@@ -41,11 +51,11 @@ function listData(data) {
   clearData();
   if (data.length > 6) {
     for (let i = 0; i < 6; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQuality(this, this.value);getPollens(this, this.value)'  value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' onclick='buttonFunction(this, this.value);toggleLoader()'  value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   } else {
     for (let i = 0; i < data.length; i++) {
-      listsearchbar.innerHTML += `<li class='liststyle' onclick='getAirQuality(this, this.value);getPollens(this, this.value)' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
+      listsearchbar.innerHTML += `<li class='liststyle' onclick='buttonFunction(this, this.value);toggleLoader()' value='${data[i].code_insee}' ><i class='fa-solid fa-location-dot icons'></i>${data[i].commune}</li>`;
     }
   }
 }
@@ -115,44 +125,29 @@ async function getAirQuality(com, insee) {
   //* Actualisation et assignations des bons conseils/timecode en fonction de la qualité de l'air
   switch (airGenStr) {
     case "Bon":
-      var timecode = "0,0.65";
       document.getElementById("air-bon").style.display = "block";
       break;
 
     case "Moyen":
-      var timecode = "0,1.50";
       document.getElementById("air-bon").style.display = "block";
       break;
 
     case "Dégradé":
-      var timecode = "0,2";
       document.getElementById("air-moyen").style.display = "block";
       break;
 
     case "Mauvais":
-      var timecode = "0,3.10";
       document.getElementById("air-moyen").style.display = "block";
       break;
 
     case "Très mauvais":
-      var timecode = "0,3.80";
       document.getElementById("air-moyen").style.display = "block";
       break;
 
     case "Extrêmement mauvais":
-      var timecode = "0,4.60";
       document.getElementById("air-degrade").style.display = "block";
       break;
   }
-
-  const animCode = `<video class="anim" playsinline autoplay preload>
-
-  <source src="assets/anim/Animation.mp4#t=${timecode}"
-          type="video/mp4">
-
-</video>`;
-
-  document.getElementById("anim").innerHTML = animCode;
 
   document.getElementById(
     "pm10"
@@ -208,12 +203,23 @@ async function getPollens(com, insee) {
   );
   let pollendata = await response.json();
   pollenData(pollendata);
-  console.log(pollendata);
   return pollendata;
 }
 
 //* Fonction permettant de filtrer et afficher les données du pollen
 function pollenData(pollendata) {
+  console.log(pollendata);
+
+  let indice = pollendata.data.indices_atmo[current_date].indice_atmo;
+  const animCode = `<video class="anim" playsinline autoplay preload>
+
+  <source src="assets/anim/animation3.mp4#t=0,${indice - 1.1}"
+          type="video/mp4">
+
+</video>`;
+
+  document.getElementById("anim").innerHTML = animCode;
+
   //* Récupération de la couleur de l'indice général
   couleur = pollendata.data.pollens.indice_pollen;
   if (couleur == 1) {
@@ -268,3 +274,12 @@ function pollenData(pollendata) {
     "generalpollen"
   ).innerHTML = `<h2 style='color:${couleurind};'> ${pollendata.data.pollens.indice_pollen}</h2><br> `;
 }
+
+const buttonFunction = (com, insee) => {
+  Promise.all([getAirQuality(com, insee), getPollens(com, insee)]).then(
+    (values) => {
+      toggleLoader();
+      console.log("hey", values);
+    }
+  );
+};
