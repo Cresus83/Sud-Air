@@ -284,7 +284,7 @@
   // --------------------------------------------------------------------
   const growthChartEl = document.querySelector("#growthChart"),
     growthChartOptions = {
-      series: [80],
+      series: [90],
       labels: ["Avancement"],
       chart: {
         height: 240,
@@ -517,7 +517,7 @@
     incomeChartConfig = {
       series: [
         {
-          data: [24, 21, 30, 22, 42, 26, 35, 29],
+          data: [0, 3, 35, 29, 6, 0],
         },
       ],
       chart: {
@@ -530,7 +530,7 @@
         type: "area",
       },
       dataLabels: {
-        enabled: false,
+        enabled: true,
       },
       stroke: {
         width: 2,
@@ -581,7 +581,14 @@
         },
       },
       xaxis: {
-        categories: ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+        categories: [
+          "",
+          "Octobre",
+          "Septembre",
+          "Novembre",
+          "Décembre",
+          "Janvier",
+        ],
         axisBorder: {
           show: false,
         },
@@ -604,6 +611,13 @@
         max: 50,
         tickAmount: 4,
       },
+      tooltip: {
+        shared: false,
+        intersect: true,
+        x: {
+          show: false,
+        },
+      },
     };
   if (typeof incomeChartEl !== undefined && incomeChartEl !== null) {
     const incomeChart = new ApexCharts(incomeChartEl, incomeChartConfig);
@@ -614,7 +628,7 @@
   // --------------------------------------------------------------------
   const weeklyExpensesEl = document.querySelector("#expensesOfWeek"),
     weeklyExpensesConfig = {
-      series: [65],
+      series: [6],
       chart: {
         width: 60,
         height: 60,
@@ -640,7 +654,7 @@
             },
             value: {
               formatter: function (val) {
-                return "$" + parseInt(val);
+                return +parseInt(val);
               },
               offsetY: 5,
               color: "#697a8d",
