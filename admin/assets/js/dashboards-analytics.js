@@ -517,7 +517,7 @@
     incomeChartConfig = {
       series: [
         {
-          data: [0, 3, 35, 29, 6, 0],
+          data: [0, 3, 35, 24, 6, 0],
         },
       ],
       chart: {
