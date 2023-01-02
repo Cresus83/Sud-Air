@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Sud'Air, première agence locale dédiée à l'évaluation de la qualité de l'air de la région Provence-Alpes-Côte-d'Azur"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Sud'Air | Accueil" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="#" />
+    <meta
+      property="og:description"
+      content="Sud'Air, première agence locale dédiée à l'évaluation de la qualité de l'air de la région Provence-Alpes-Côte-d'Azur"
+    />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Sud'Air | Accueil" />
+    <meta
+      name="twitter:description"
+      content="Sud'Air, première agence locale dédiée à l'évaluation de la qualité de l'air de la région Provence-Alpes-Côte-d'Azur"
+    />
+    <title>Sud'Air | Accueil</title>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.svg" rel="icon" />
+    <link
+      href="assets/img/apple_touch_icon_140x140.png"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!--  Fichiers CSS -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="unselectable">
+    <!-- ======= Header ======= -->
+    <div class="loader-wrapper" id="loader">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <header id="header">
+      <video src="assets/img/hero-main.mp4" playsinline preload autoplay="autoplay" muted="muted" loop="loop"></video>
+      <div class="container page-centrale">
+        <div class="row">
+          <div class="col-sm-6 logo-col">
+            <a href="index.html" class="mr-auto logo"
+              ><img
+                src="assets/img/logo.svg"
+                alt="logo-Sud-Air"
+                class="img-fluid"
+            /></a>
+            <h2>
+              Découvrez dès maintenant la qualité de l’air que vous inspirez en
+              région Provence-Alpes Côte d’Azur !
+            </h2>
+          </div>
+          <div class="col-sm-6 search-bar">
+            <div class="wrapper">
+              <div class="search-input">
+                <a href="#" target="_blank" hidden></a>
+                <input
+                  id="search"
+                  class="input"
+                  type="text"
+                  placeholder="Recherchez votre ville..."
+                />
+                <div class="autocom-box"></div>
+                <div class="icon"><i class="fas fa-search"></i></div>
+                <div class="" id="selected">
+                  <ul id="listsearch"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <!-- ======= Section Qualité de l'air ======= -->
+      <section id="air-quality">
+        <div class="container">
+          <h1 class="text-center title-city">
+            Découvrons ce que vous inspirez à
+            <span style="color: #644bff" id="citysearch"></span>.
+          </h1>
+          <div class="section-title">
+            <span>Qualité de l'air</span>
+            <h2>Qualité de l'air</h2>
+          </div>
+          <div class="Airdata">
+            <div class="animation" id="anim"></div>
+            <div class="general">
+              <h4>Qualité générale de l'air</h4>
+              <div id="general"></div>
+              <br />
+            </div>
+
+            <div class="widgets">
+              <div
+                class="custom-card-air-quality tooltip"
+                title="Particules fines dont le diamètre est < 10 µm"
+              >
+                <img
+                  style="width: 100px; display: flex; margin: auto"
+                  src="assets/img/particules/pm10.png"
+                  alt="PM10-icon"
+                />
+                <div class="custom-card-air-quality-result">
+                  <div id="pm10"></div>
+                </div>
+              </div>
+
+              <div
+                class="custom-card-air-quality tooltip"
+                title="Particules fines dont le diamètre est < 2.5 µm"
+              >
+                <img
+                  style="width: 100px; display: flex; margin: auto"
+                  src="assets/img/particules/pm25.png"
+                  alt="PM2.5-icon"
+                />
+                <div class="custom-card-air-quality-result">
+                  <div id="pm2"></div>
+                </div>
+              </div>
+
+              <div class="custom-card-air-quality tooltip" title="Ozone">
+                <img
+                  style="width: 100px; display: flex; margin: auto"
+                  src="assets/img/particules/ozone.png"
+                  alt="ozone-icon"
+                />
+                <div class="custom-card-air-quality-result">
+                  <div id="ozone"></div>
+                </div>
+              </div>
+
+              <div
+                class="custom-card-air-quality tooltip"
+                title="Dioxyde d'azote"
+              >
+                <img
+                  style="width: 100px; display: flex; margin: auto"
+                  src="assets/img/particules/azote.png"
+                  alt="azote-icon"
+                />
+                <div class="custom-card-air-quality-result">
+                  <div id="azote"></div>
+                </div>
+              </div>
+
+              <div
+                class="custom-card-air-quality tooltip"
+                title="Dioxyde de soufre"
+              >
+                <img
+                  style="width: 100px; display: flex; margin: auto"
+                  src="assets/img/particules/soufre.png"
+                  alt="soufre-icon"
+                />
+                <div class="custom-card-air-quality-result">
+                  <div id="soufre"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ======= Bouton conseil ======= -->
+          <div class="conseil-box">
+            <button class="toggle" data-target="popup-conseil">
+              <img
+                alt="lightbulb-conseil"
+                src="assets/img/lightbulb.png"
+              />Découvrez nos conseils pour vous protéger de la pollution de
+              l’air à&nbsp;<span id="citysearch2"></span>.
+            </button>
+          </div>
+
+          <!-- ======= Popup Conseil ======= -->
+          <div id="popup-conseil" class="popup hide">
+            <div class="popup-header">
+              <h2>
+                Nos conseils pour profiter d'un air pur et frais en toute
+                circonstance :
+              </h2>
+              <span class="close toggle" data-target="popup-conseil"
+                >close</span
+              >
+            </div>
+            <div class="popup-body">
+              <!-- ======= Qualité de l'air dégradé ======= -->
+              <div id="air-degrade" style="display: none">
+                <div class="conseil-div">
+                  <div class="conseil">
+                    <img
+                      alt="icone_fenetres-fermees"
+                      style="padding-right: 10px"
+                      src="assets/img/icones/rouge/fenêtre.svg"
+                    />
+                    <p>
+                      Fermez vos fenêtres pour empêcher à l'air pollué de
+                      rentrer.
+                    </p>
+                  </div>
+                  <div class="conseil">
+                    <img
+                      alt="icone_purificateur_air"
+                      style="padding-right: 10px"
+                      src="assets/img/icones/rouge/purificateur-air.svg"
+                    />
+                    <p>
+                      L'usage d'un purificateur d'air est particulièrement
+                      recommandé.
+                    </p>
+                  </div>
+                </div>
+                <div class="conseil-div">
+                  <div class="conseil">
+                    <img
+                      alt="icone_activites"
+                      style="padding-right: 10px"
+                      src="assets/img/icones/rouge/sport.svg"
+                    />
+                    <p>Évitez impérativement les activités de plein air.</p>
+                  </div>
+                  <div class="conseil">
+                    <img
+                      alt="icone_port_du_masque"
+                      style="padding-right: 10px"
+                      src="assets/img/icones/rouge/port-du-masque.svg"
+                    />
+                    <p>
+                      Le port du masque est fortement recommandé pour les
+                      personnes à risque.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--</div> -->
+
+              <!-- ======= Qualité de l'air moyenne ======= -->
+              <div id="air-moyen" style="display: none">
+                <!--  ======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
+                <div class="conseil-div">
+                  <div class="conseil">
+                    <img
+                      alt="icone_fenetres-fermees"
+                      style="padding-right: 10px"
+                      src="assets/img/icones/orange/fenêtre.svg"
+                    />
+                    <p>
+                      Fermez vos fenêtres pour empêcher à l'air pollué de
+                      rentrer.
+                    </p>
+                  </div>
+                  <div class="conseil">
+                    <img
+                      alt="icone_purificateur_air"
+                      style="padding-right: 10px"
+                      src="assets/img/icones/orange/purificateur-air.svg"
+                    />
+                    <p>L'usage d'un purificateur d'air est recommandé.</p>
+                  </div>
+                </div>
+                <div class="conseil-div">
+                  <div class="conseil">
+                    <img
+                      alt="icone_activites"
+                      style="padding-right: 10px"
+                      src="assets/img/icones/orange/sport.svg"
+                    />
+                    <p>Évitez les activités de plein air.</p>
+                  </div>
+                  <div class="conseil">
+                    <img
+                      alt="icone_port_du_masque"
+                      style="padding-right: 10px"
+                      src="assets/img/icones/orange/port-du-masque.svg"
+                    />
+                    <p>
+                      Le port du masque est recommandé pour les personnes à
+                      risque.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ======= Qualité de l'air bonne ======= -->
+              <div id="air-bon" style="display: none">
+                <!--======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
+                <div class="conseil-div">
+                  <div class="conseil">
+                    <img
+                      alt="icone_fenetres-fermees"
+                      style="padding-right: 10px"
+                      src="assets/img/icones/vert/fenêtre.svg"
+                    />
+                    <p>
+                      Ouvrez grand vos fenêtres afin de renouveller l'air pollué
+                      par de l'air pur et frais.
+                    </p>
+                  </div>
+                  <div class="conseil">
+                    <img
+                      alt="icone_purificateur_air"
+                      style="padding-right: 10px"
+                      src="assets/img/icones/vert/sport.svg"
+                    />
+                    <p>Profitez pleinement des activités de plein air.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="popup-footer">
+                <button
+                  class="toggle button-understand"
+                  data-target="popup-conseil"
+                >
+                  J'AI COMPRIS !
+                </button>
+              </div>
+            </div>
+
+            <!-- ======= Popup Conseil ======= -->
+            <div id="popup-conseil" class="overlay toggle hide">
+              <div class="popup">
+                <h2 class="popup-header">
+                  Nos conseils pour profiter d'un air pur et frais en toute
+                  circonstance :
+                </h2>
+                <a class="close toggle" data-target="popup-conseil" href="#"
+                  >&times;</a
+                >
+                <div class="popup-body">
+                  <!-- ======= Qualité de l'air dégradé ======= -->
+                  <div id="air-degrade" style="display: none">
+                    <div class="conseil-div">
+                      <div class="conseil">
+                        <img
+                          alt="icone_fenetres-fermees"
+                          style="padding-right: 10px"
+                          src="assets/img/icones/rouge/fenêtre.svg"
+                        />
+                        <p>
+                          Fermez vos fenêtres pour empêcher à l'air pollué de
+                          rentrer.
+                        </p>
+                      </div>
+                      <div class="conseil">
+                        <img
+                          alt="icone_purificateur_air"
+                          style="padding-right: 10px"
+                          src="assets/img/icones/rouge/purificateur-air.svg"
+                        />
+                        <p>
+                          L'usage d'un purificateur d'air est particulièrement
+                          recommandé.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="conseil-div">
+                      <div class="conseil">
+                        <img
+                          alt="icone_activites"
+                          style="padding-right: 10px"
+                          src="assets/img/icones/rouge/sport.svg"
+                        />
+                        <p>Évitez impérativement les activités de plein air.</p>
+                      </div>
+                      <div class="conseil">
+                        <img
+                          alt="icone_port_du_masque"
+                          style="padding-right: 10px"
+                          src="assets/img/icones/rouge/port-du-masque.svg"
+                        />
+                        <p>
+                          Le port du masque est fortement recommandé pour les
+                          personnes à risque.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!--</div> -->
+
+                  <!-- ======= Qualité de l'air moyenne ======= -->
+                  <div id="air-moyen" style="display: none">
+                    <!--  ======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
+                    <div class="conseil-div">
+                      <div class="conseil">
+                        <img
+                          alt="icone_fenetres-fermees"
+                          style="padding-right: 10px"
+                          src="assets/img/icones/orange/fenêtre.svg"
+                        />
+                        <p>
+                          Fermez vos fenêtres pour empêcher à l'air pollué de
+                          rentrer.
+                        </p>
+                      </div>
+                      <div class="conseil">
+                        <img
+                          alt="icone_purificateur_air"
+                          style="padding-right: 10px"
+                          src="assets/img/icones/orange/purificateur-air.svg"
+                        />
+                        <p>L'usage d'un purificateur d'air est recommandé.</p>
+                      </div>
+                    </div>
+                    <div class="conseil-div">
+                      <div class="conseil">
+                        <img
+                          alt="icone_activites"
+                          style="padding-right: 10px"
+                          src="assets/img/icones/orange/sport.svg"
+                        />
+                        <p>Évitez les activités de plein air.</p>
+                      </div>
+                      <div class="conseil">
+                        <img
+                          alt="icone_port_du_masque"
+                          style="padding-right: 10px"
+                          src="assets/img/icones/orange/port-du-masque.svg"
+                        />
+                        <p>
+                          Le port du masque est recommandé pour les personnes à
+                          risque.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ======= Qualité de l'air bonne ======= -->
+                  <div id="air-bon" style="display: none">
+                    <!--======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
+                    <div class="conseil-div">
+                      <div class="conseil">
+                        <img
+                          alt="icone_fenetres-fermees"
+                          style="padding-right: 10px"
+                          src="assets/img/icones/vert/fenêtre.svg"
+                        />
+                        <p>
+                          Ouvrez grand vos fenêtres afin de renouveller l'air
+                          pollué par de l'air pur et frais.
+                        </p>
+                      </div>
+                      <div class="conseil">
+                        <img
+                          alt="icone_purificateur_air"
+                          style="padding-right: 10px"
+                          src="assets/img/icones/vert/sport.svg"
+                        />
+                        <p>Profitez pleinement des activités de plein air.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup-footer">
+                    <button
+                      class="toggle button-understand"
+                      data-target="popup-conseil"
+                    >
+                      J'AI COMPRIS !
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= Section Risques Polliniques ======= -->
+      <section id="pollen_risque">
+        <div class="container">
+          <div class="section-title">
+            <span>Risque pollinique</span>
+            <h2>Risque pollinique</h2>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 indice-pollinique">
+                <h4>Risque pollinique général</h4>
+                <div class="indice-pollinique">
+                  <img
+                    style="width: 30%"
+                    src="assets/img/pollen.png"
+                    alt="pollen-icon"
+                  />
+                  <div id="generalpollen" class="circle"></div>
+                </div>
+              </div>
+
+              <div class="col-md-7">
+                <h4 class="text-center" style="margin-top: 40px">
+                  Présence potentielle des allergens suivants :
+                </h4>
+                <div
+                  class="row d-flex justify-content-center text-center float-left"
+                >
+                  <div class="col-sm-4">
+                    <div
+                      id="p0"
+                      class="custom-card-pollen taxons"
+                      data-taxon="Ambroisie"
+                    >
+                      <h4 class="title-pollen">AMBROISIES</h4>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div
+                      id="p1"
+                      class="custom-card-pollen taxons"
+                      data-taxon="Armoise"
+                    >
+                      <h4 class="title-pollen">ARMOISES</h4>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div
+                      id="p2"
+                      class="custom-card-pollen taxons"
+                      data-taxon="Graminées"
+                    >
+                      <h4 class="title-pollen">GRAMINÉES</h4>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div
+                      id="p3"
+                      class="custom-card-pollen taxons"
+                      data-taxon="Oseille"
+                    >
+                      <h4 class="title-pollen">OSEILLES</h4>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div
+                      id="p4"
+                      class="custom-card-pollen taxons"
+                      data-taxon="Peuplier"
+                    >
+                      <h4 class="title-pollen">PEUPLIER</h4>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div
+                      id="p5"
+                      class="custom-card-pollen taxons"
+                      data-taxon="Plantain"
+                    >
+                      <h4 class="title-pollen">PLANTAIN</h4>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div
+                      id="p6"
+                      class="custom-card-pollen taxons"
+                      data-taxon="Platane"
+                    >
+                      <h4 class="title-pollen">PLATANE</h4>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div
+                      id="p7"
+                      class="custom-card-pollen taxons"
+                      data-taxon="Saule"
+                    >
+                      <h4 class="title-pollen">SAULE</h4>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div
+                      id="p8"
+                      class="custom-card-pollen taxons"
+                      data-taxon="Urticacées"
+                    >
+                      <h4 class="title-pollen">URTICACÉES</h4>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div
+                      id="p9"
+                      class="custom-card-pollen taxons"
+                      data-taxon="Tilleul"
+                    >
+                      <h4 class="title-pollen">Tilleul</h4>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div
+                      id="p10"
+                      class="custom-card-pollen taxons"
+                      data-taxon="Cupressacées"
+                    >
+                      <h4 class="title-pollen">Cupressacées</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: #00305c">
+          © SUD'AIR. Tous droits réservés.<br />
+          Made with ❤️ by Rayan & Alan.
+        </div>
+        <!-- Copyright -->
+      </footer>
+    </main>
+    <!-- Fin #main -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/b5858ea88a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/2.5.3/tippy.all.min.js"></script>
+    <script src="assets/app/api.js"></script>
+    <script src="assets/app/main.js"></script>
+    <script src="assets/app/popup-conseil.js"></script>
+    <script>
+      $(window).on("load", function () {
+        $(".loader-wrapper").fadeOut("slow");
+      });
+    </script>
+  </body>
+</html>
