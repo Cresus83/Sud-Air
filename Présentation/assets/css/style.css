@@ -824,8 +824,8 @@ ul {
 
   .popup .popup-body {
     padding: 25px 0;
-    max-height: 45%;
-    overflow: auto;
+    max-height: 100%;
+    overflow: visible;
   }
 }
 
