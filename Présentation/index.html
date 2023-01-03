@@ -58,7 +58,14 @@
     </div>
 
     <header id="header">
-      <video src="assets/img/hero-main.mp4" playsinline preload autoplay="autoplay" muted="muted" loop="loop"></video>
+      <video
+        src="assets/img/hero-main.mp4"
+        playsinline
+        preload
+        autoplay="autoplay"
+        muted="muted"
+        loop="loop"
+      ></video>
       <div class="container page-centrale">
         <div class="row">
           <div class="col-sm-6 logo-col">
@@ -204,13 +211,13 @@
                 Nos conseils pour profiter d'un air pur et frais en toute
                 circonstance :
               </h2>
-              <span class="close toggle" data-target="popup-conseil"
+              <span class="close toggle" id="close" data-target="popup-conseil"
                 >close</span
               >
             </div>
             <div class="popup-body">
               <!-- ======= Qualité de l'air dégradé ======= -->
-              <div id="air-degrade" style="display: none">
+              <div id="air-degrade" style="display: none" class="tips">
                 <div class="conseil-div">
                   <div class="conseil">
                     <img
@@ -260,7 +267,7 @@
               <!--</div> -->
 
               <!-- ======= Qualité de l'air moyenne ======= -->
-              <div id="air-moyen" style="display: none">
+              <div id="air-moyen" class="tips" style="display: none">
                 <!--  ======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
                 <div class="conseil-div">
                   <div class="conseil">
@@ -307,7 +314,7 @@
               </div>
 
               <!-- ======= Qualité de l'air bonne ======= -->
-              <div id="air-bon" style="display: none">
+              <div id="air-bon" class="tips" style="display: none">
                 <!--======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
                 <div class="conseil-div">
                   <div class="conseil">
@@ -338,151 +345,6 @@
                 >
                   J'AI COMPRIS !
                 </button>
-              </div>
-            </div>
-
-            <!-- ======= Popup Conseil ======= -->
-            <div id="popup-conseil" class="overlay toggle hide">
-              <div class="popup">
-                <h2 class="popup-header">
-                  Nos conseils pour profiter d'un air pur et frais en toute
-                  circonstance :
-                </h2>
-                <a class="close toggle" data-target="popup-conseil" href="#"
-                  >&times;</a
-                >
-                <div class="popup-body">
-                  <!-- ======= Qualité de l'air dégradé ======= -->
-                  <div id="air-degrade" style="display: none">
-                    <div class="conseil-div">
-                      <div class="conseil">
-                        <img
-                          alt="icone_fenetres-fermees"
-                          style="padding-right: 10px"
-                          src="assets/img/icones/rouge/fenêtre.svg"
-                        />
-                        <p>
-                          Fermez vos fenêtres pour empêcher à l'air pollué de
-                          rentrer.
-                        </p>
-                      </div>
-                      <div class="conseil">
-                        <img
-                          alt="icone_purificateur_air"
-                          style="padding-right: 10px"
-                          src="assets/img/icones/rouge/purificateur-air.svg"
-                        />
-                        <p>
-                          L'usage d'un purificateur d'air est particulièrement
-                          recommandé.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="conseil-div">
-                      <div class="conseil">
-                        <img
-                          alt="icone_activites"
-                          style="padding-right: 10px"
-                          src="assets/img/icones/rouge/sport.svg"
-                        />
-                        <p>Évitez impérativement les activités de plein air.</p>
-                      </div>
-                      <div class="conseil">
-                        <img
-                          alt="icone_port_du_masque"
-                          style="padding-right: 10px"
-                          src="assets/img/icones/rouge/port-du-masque.svg"
-                        />
-                        <p>
-                          Le port du masque est fortement recommandé pour les
-                          personnes à risque.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <!--</div> -->
-
-                  <!-- ======= Qualité de l'air moyenne ======= -->
-                  <div id="air-moyen" style="display: none">
-                    <!--  ======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
-                    <div class="conseil-div">
-                      <div class="conseil">
-                        <img
-                          alt="icone_fenetres-fermees"
-                          style="padding-right: 10px"
-                          src="assets/img/icones/orange/fenêtre.svg"
-                        />
-                        <p>
-                          Fermez vos fenêtres pour empêcher à l'air pollué de
-                          rentrer.
-                        </p>
-                      </div>
-                      <div class="conseil">
-                        <img
-                          alt="icone_purificateur_air"
-                          style="padding-right: 10px"
-                          src="assets/img/icones/orange/purificateur-air.svg"
-                        />
-                        <p>L'usage d'un purificateur d'air est recommandé.</p>
-                      </div>
-                    </div>
-                    <div class="conseil-div">
-                      <div class="conseil">
-                        <img
-                          alt="icone_activites"
-                          style="padding-right: 10px"
-                          src="assets/img/icones/orange/sport.svg"
-                        />
-                        <p>Évitez les activités de plein air.</p>
-                      </div>
-                      <div class="conseil">
-                        <img
-                          alt="icone_port_du_masque"
-                          style="padding-right: 10px"
-                          src="assets/img/icones/orange/port-du-masque.svg"
-                        />
-                        <p>
-                          Le port du masque est recommandé pour les personnes à
-                          risque.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- ======= Qualité de l'air bonne ======= -->
-                  <div id="air-bon" style="display: none">
-                    <!--======= Fonction à rajouter pour afficher le contenu selon le résultat de la qualité de l'air de la ville ======= -->
-                    <div class="conseil-div">
-                      <div class="conseil">
-                        <img
-                          alt="icone_fenetres-fermees"
-                          style="padding-right: 10px"
-                          src="assets/img/icones/vert/fenêtre.svg"
-                        />
-                        <p>
-                          Ouvrez grand vos fenêtres afin de renouveller l'air
-                          pollué par de l'air pur et frais.
-                        </p>
-                      </div>
-                      <div class="conseil">
-                        <img
-                          alt="icone_purificateur_air"
-                          style="padding-right: 10px"
-                          src="assets/img/icones/vert/sport.svg"
-                        />
-                        <p>Profitez pleinement des activités de plein air.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="popup-footer">
-                    <button
-                      class="toggle button-understand"
-                      data-target="popup-conseil"
-                    >
-                      J'AI COMPRIS !
-                    </button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

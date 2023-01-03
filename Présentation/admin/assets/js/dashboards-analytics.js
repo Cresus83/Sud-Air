@@ -284,7 +284,7 @@
   // --------------------------------------------------------------------
   const growthChartEl = document.querySelector("#growthChart"),
     growthChartOptions = {
-      series: [90],
+      series: [100],
       labels: ["Avancement"],
       chart: {
         height: 240,
@@ -517,7 +517,7 @@
     incomeChartConfig = {
       series: [
         {
-          data: [0, 3, 35, 24, 6, 0],
+          data: [0, 3, 35, 24, 6, 3],
         },
       ],
       chart: {

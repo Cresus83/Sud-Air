@@ -1,6 +1,9 @@
-$(document).on('click', '.toggle', function(event) {
+$(document).on("click", ".toggle", function (event) {
   event.preventDefault();
-
-  var target = $(this).data('target');
-  $('#' + target).toggleClass('hide');
+  $(document.body).toggleClass("blockY");
+  $(document.body).removeClass("acceptY");
+  var target = $(this).data("target");
+  $("#" + target).toggleClass("hide");
+  $("#" + target).removeClass("blockY");
+  $("#" + target).toggleClass("acceptY");
 });

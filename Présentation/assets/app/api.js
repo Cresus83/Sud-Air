@@ -13,7 +13,8 @@ function toggleLoader() {
 var current_date = new Date().toLocaleDateString("en-CA");
 var tomorrow = new Date(Date.now() + 3600 * 1000 * 24); // + 1 day in ms
 var tomorrow_date = tomorrow.toLocaleDateString("en-CA");
-document.body.style.overflowY = "hidden";
+$(document.body).toggleClass("blockY");
+$(document.body).removeClass("acceptY");
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
 
 async function getVilles() {
@@ -74,7 +75,8 @@ function clearData() {
 //* Slide vers le bas de 900px et appel la function dataSelected
 function slide() {
   window.scrollTo(0, 900);
-  document.body.style.overflowY = "scroll";
+  $(document.body).removeClass("blockY");
+  $(document.body).toggleClass("acceptY");
 }
 
 //* Script AJAX permettant la récolte d'information auprés de L'API Atmosud-->
@@ -121,33 +123,69 @@ async function getAirQuality(com, insee) {
 
   const airColStr = JSON.parse(airColor);
   const airGenStr = JSON.parse(airGen);
+  const allTips = document.querySelectorAll(".tips");
+  console.log(allTips);
 
   //* Actualisation et assignations des bons conseils/timecode en fonction de la qualité de l'air
   switch (airGenStr) {
     case "Bon":
+      allTips.forEach((div) => {
+        div.style.display = "none";
+      });
       document.getElementById("air-bon").style.display = "block";
+      indice = 0.5;
       break;
 
     case "Moyen":
-      document.getElementById("air-bon").style.display = "block";
+      allTips.forEach((div) => {
+        div.style.display = "none";
+      });
+      document.getElementById("air-moyen").style.display = "block";
+      indice = 1.5;
       break;
 
     case "Dégradé":
+      allTips.forEach((div) => {
+        div.style.display = "none";
+      });
       document.getElementById("air-moyen").style.display = "block";
+      indice = 2.5;
       break;
 
     case "Mauvais":
-      document.getElementById("air-moyen").style.display = "block";
+      allTips.forEach((div) => {
+        div.style.display = "none";
+      });
+      document.getElementById("air-degrade").style.display = "block";
+      indice = 3.5;
       break;
 
     case "Très mauvais":
-      document.getElementById("air-moyen").style.display = "block";
+      allTips.forEach((div) => {
+        div.style.display = "none";
+      });
+      document.getElementById("air-degrade").style.display = "block";
+      indice = 4.5;
       break;
 
     case "Extrêmement mauvais":
+      allTips.forEach((div) => {
+        div.style.display = "none";
+      });
       document.getElementById("air-degrade").style.display = "block";
+      indice = 5.5;
       break;
   }
+
+  const animCode = `<video class="anim"   playsInline
+  preload="auto" autoplay muted poster="https://cdn.indiawealth.in/public/images/transparent-background-mini.png">
+
+  <source src="assets/anim/animation3.mp4#t=0,${indice}"
+          type="video/mp4">
+
+</video>`;
+
+  document.getElementById("anim").innerHTML = animCode;
 
   document.getElementById(
     "pm10"
@@ -209,16 +247,6 @@ async function getPollens(com, insee) {
 //* Fonction permettant de filtrer et afficher les données du pollen
 function pollenData(pollendata) {
   console.log(pollendata);
-
-  let indice = pollendata.data.indices_atmo[current_date].indice_atmo;
-  const animCode = `<video class="anim" playsinline autoplay preload>
-
-  <source src="assets/anim/animation3.mp4#t=0,${indice - 1.1}"
-          type="video/mp4">
-
-</video>`;
-
-  document.getElementById("anim").innerHTML = animCode;
 
   //* Récupération de la couleur de l'indice général
   couleur = pollendata.data.pollens.indice_pollen;

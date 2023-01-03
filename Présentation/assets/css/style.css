@@ -32,6 +32,12 @@ section {
   background: #f9b233;
 }
 
+.blockY {
+  overflow-y: hidden;
+}
+.acceptY {
+  overflow-y: scroll;
+}
 .unselectable {
   -webkit-user-select: none; /* Chrome all / Safari all */
   -moz-user-select: none; /* Firefox all */
@@ -808,6 +814,7 @@ ul {
     justify-content: center;
     position: fixed;
     top: 50%;
+    z-index: 9999;
   }
 
   .popup-header {
@@ -817,7 +824,7 @@ ul {
 
   .popup .popup-body {
     padding: 25px 0;
-    max-height: 30%;
+    max-height: 45%;
     overflow: auto;
   }
 }
