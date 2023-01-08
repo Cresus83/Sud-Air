@@ -269,7 +269,7 @@ function pollenData(pollendata) {
       JSON.stringify(pollendata.data.pollens.taxons[b].indice)
     );
 
-    if (indicestab == "1") {
+    if (indicestab >= "1") {
       let pollstr = JSON.stringify(pollendata.data.pollens.taxons[b].label);
       pollentab.push(JSON.parse(pollstr));
     }
@@ -290,6 +290,8 @@ function pollenData(pollendata) {
 
     //* Vérification de la sortie de la fonction de comparaison
     //* Si 'true' ne fais rien
+
+    console.log(pollentab);
     if (findEqualDatas(taxonsarray, pollentab) == true) {
     }
     //* Si 'false' cache la carte spécifique

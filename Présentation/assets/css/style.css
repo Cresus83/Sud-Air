@@ -749,6 +749,11 @@ ul {
 }
 
 #p10 {
+  background: url("../img/plantes/frene.webp") no-repeat;
+  background-size: cover;
+}
+
+#p11 {
   background: url("../img/plantes/cupressus.webp") no-repeat;
   background-size: cover;
 }
